@@ -6,8 +6,12 @@
 
 ```bash
 # Listen
-$ arecord -f S16_LE -r 44100 a.wav
-# Intrrupt -> Play
+$ arecord -f S16_LE -r 44100 mid.wav &
+# Read
+$ ./read.sh beginner.sh
+# Stop listenning
+$ kill -INT $!
+# Play
 $ aplay a.wav
 ```
 
@@ -25,6 +29,8 @@ $ cat file | tr -d \\n\\r | sed -r 's/。/&\n/g'
 ## ソース
 
 - UTF-8でないと動かん
+- beginner
+  - http://kurata.x.fc2.com/sizihyou-dansei-syokyu.html
 
 - mid
   - http://kurata.x.fc2.com/sizihyou-dansei-tyuukyu.html

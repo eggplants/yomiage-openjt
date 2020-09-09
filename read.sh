@@ -7,9 +7,9 @@ yomi(){
 }
 
 main(){
-  cat "$1" | while read line;do
+  egrep -v "^#" "$1" | while read line;do
     if [[ "$line" == *min ]];then
-      sleep "$(echo \"$line\" | sed 's/min//')m"
+      sleep "${line//min/}m"
     elif [[ "$line" = "" ]];then
       sleep 0.3
     else
