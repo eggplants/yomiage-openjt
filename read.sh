@@ -7,6 +7,7 @@ yomi(){
 }
 
 main(){
+  trap 'kill $$' 1 2 3 15
   egrep -v "^#" "$1" | while read line;do
     if [[ "$line" == *min ]];then
       sleep "${line//min/}m"
