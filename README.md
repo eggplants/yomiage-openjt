@@ -2,6 +2,14 @@
 
 - OpenJTalkくんの研究
 
+## はじめに
+
+```bash
+$ chmod +x ./*.sh
+$ ./prepare_openjt,sh
+$ ./down_akihito.sh
+```
+
 ## 録音
 
 ```bash
