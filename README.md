@@ -16,7 +16,7 @@ $ ./down_akihito.sh
 # Listen
 $ arecord -f S16_LE -r 44100 mid.wav &
 # Read
-$ ./read.sh beginner.sh
+$ ./read.sh beginner
 # Stop listenning
 $ kill -INT $!
 # Play
