@@ -16,6 +16,9 @@ main(){
     [[ -f "${voice}" ]] || {
         wget http://sourceforge.net/projects/mmdagent/files/MMDAgent_Example/MMDAgent_Example-1.8/MMDAgent_Example-1.8.zip
         unzip MMDAgent_Example-1.8.zip
+        [[ -d /usr/share/hts-voice/ ]] || {
+            sudo mkdir /usr/share/hts-voice/
+        }
         sudo cp -r MMDAgent_Example-1.8/Voice/mei/ /usr/share/hts-voice/
         rm -rf MMDAgent*
     }
