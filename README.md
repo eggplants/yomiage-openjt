@@ -22,7 +22,7 @@ $ ./read.sh beginner
 # yahooトップページニュース読み上げ
 $ curl -s 'https://news.yahoo.co.jp/' \
   | grep -oP '(?<=yjnSub_list_headline">).*?(?=<)' \
-  | while read i;do ./read.sh -<<<"$i";done
+  | while read i;do <<<"$i" tee >(./read.sh -);done
 ```
 
 ## 正規化
