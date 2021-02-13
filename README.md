@@ -13,6 +13,8 @@ $ ./down_akihito.sh
 ## お試し
 
 ```bash
+# インストールしたボイスモデルを全部試す
+$ ./allvoice_test.sh
 # cv. 白狐舞
 $ ./read.sh -<<<こんにちは
 # ファイル読み上げ
