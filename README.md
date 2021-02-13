@@ -6,7 +6,7 @@
 
 ```bash
 $ chmod +x ./*.sh
-$ ./prepare_openjt,sh
+$ ./prepare_openjt.sh
 $ ./down_akihito.sh
 ```
 
@@ -27,7 +27,7 @@ $ aplay a.wav
 
 - 正常に読んでもらうためのコツ
 
-- 改行コードをCR+LFをLFのみに。（\rを削る）
+- 改行コードをCR+LFをLFのみに（\rを削る）
 - 改行をいったん全て削り、句点のあとに改行コード（\n）を挿入
 
 ```bash
