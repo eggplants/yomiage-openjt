@@ -10,17 +10,13 @@ $ ./prepare_openjt.sh
 $ ./down_akihito.sh
 ```
 
-## 録音
+## お試し
 
 ```bash
-# Listen
-$ arecord -f S16_LE -r 44100 mid.wav &
-# Read
+# cv. 白狐舞
+$ ./read.sh -<<<こんにちは
+# ファイル読み上げ
 $ ./read.sh beginner
-# Stop listenning
-$ kill -INT $!
-# Play
-$ aplay a.wav
 ```
 
 ## 正規化
