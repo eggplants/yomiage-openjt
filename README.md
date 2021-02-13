@@ -19,6 +19,10 @@ $ ./allvoice_test.sh
 $ ./read.sh -<<<こんにちは
 # ファイル読み上げ
 $ ./read.sh beginner
+# yahooトップページニュース読み上げ
+$ curl -s 'https://news.yahoo.co.jp/' \
+  | grep -oP '(?<=yjnSub_list_headline">).*?(?=<)' \
+  | while read i;do ./read.sh -<<<"$i";done
 ```
 
 ## 正規化
