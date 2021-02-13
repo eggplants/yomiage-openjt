@@ -7,7 +7,7 @@
 ```bash
 $ chmod +x ./*.sh
 $ ./prepare_openjt.sh
-$ ./down_akihito.sh
+$ ./down_akihito.sh # 様々なボイスモデルをインストール(任意)
 ```
 
 ## お試し
