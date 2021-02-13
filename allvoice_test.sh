@@ -12,12 +12,13 @@ main(){
 	自分の声を録音して送っていただくことで、自分の声の音響モデルを作成することが出来ます。
 	もしよろしければ音響モデル作成のための利用規約をダウンロードしてみてください。
 	A
+  find /usr/share/hts-voice/ -name '*.htsvoice' | shuf |
   while read -r name;do
     basename "$name"
     cat "$tmp" | while read -r i;do
       yomi "$name" <<< "$i"
     done
-  done <(find /usr/share/hts-voice/ -name '*.htsvoice' | shuf)
+  done
 }
 main
 exit "$?"
