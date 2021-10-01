@@ -14,6 +14,13 @@
 ./down_akihito.sh
 ```
 
+## 依存
+
+```shellsession
+$ grep -r "  chkcmd"|awk '{for(i=3;i<=NF;)print$(i++)}'|sort|uniq|xargs
+aplay apt curl open_jtalk unar unzip wget
+```
+
 ## お試し
 
 ```bash

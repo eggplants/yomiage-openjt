@@ -27,4 +27,4 @@ main() {
 }
 
 main
-exit $?
+exit "$?"
