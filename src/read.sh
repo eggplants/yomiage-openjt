@@ -29,8 +29,9 @@ yomi() {
 main() {
   chkcmd open_jtalk aplay
   trap 'kill $$' 1 2 3 15
-  local f="${1-/dev/stdin}"
-  local a="${2-白狐舞}"
+  local f a hts word_count
+  f="${1-/dev/stdin}"
+  a="${2-白狐舞}"
 
   # check given input file
   if [ "$f" = '-' ]; then
@@ -40,7 +41,6 @@ main() {
     echo "file '$f' is not file"
     exit 1
   fi
-  local word_count
   word_count="$(wc -c < "$f")"
   if [ "$word_count" -eq 0 ]; then
     echo "file '$f' is empty" >&2
@@ -48,7 +48,6 @@ main() {
   fi
 
   # check given actor htsvoice
-  local hts
   hts="$(
     find /usr/share/hts-voice/ -name "${a}.htsvoice" -type f |
       head -1
@@ -59,9 +58,9 @@ main() {
   fi
   grep -vE "^#" "$f" |
     while read -r line; do
-      if [[ $line == *min ]]; then
+      if [[ "$line" =~ *min$ ]]; then
         sleep "${line//min/}m"
-      elif [[ $line == "" ]]; then
+      elif [[ "$line" = "" ]]; then
         sleep 0.3
       else
         echo "$line" | yomi "$hts" 2> /dev/null

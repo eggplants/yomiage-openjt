@@ -8,6 +8,7 @@
 ## はじめに
 
 ```bash
+# open_jtalkコマンドのインストール
 ./prepare_openjt.sh
 # 様々なボイスモデルをインストール(任意)
 ./down_akihito.sh
