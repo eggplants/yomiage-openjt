@@ -18,7 +18,7 @@
 
 ```shellsession
 $ grep -r "  chkcmd"|awk '{for(i=3;i<=NF;)print$(i++)}'|sort|uniq|xargs
-aplay apt curl open_jtalk unar unzip wget
+aplay apt curl open_jtalk sox unar unzip wget
 ```
 
 ## お試し
@@ -28,11 +28,13 @@ aplay apt curl open_jtalk unar unzip wget
 ./allvoice_test.sh
 # yahooトップページニュース読み上げ
 ./read_yahoo.sh
-# ./read.sh <file> <actor>
+# テキスト読み上げ
 ./read.sh - 白狐舞 <<< こんにちは
 ./read.sh - 唱地ヨエ <<< おはよう
 # ファイル読み上げ
 ./read.sh beginner.txt 白狐舞
+# 音声保存
+./read.sh -s beginner.txt 白狐舞
 ```
 
 ## 正規化(正常に読んでもらうためのコツ)
