@@ -40,15 +40,18 @@ main() {
     echo "file '$f' is not file"
     exit 1
   fi
-  if [ $(wc -c < "$f") -eq 0 ]; then
+  local word_count
+  word_count="$(wc -c < "$f")"
+  if [ "$word_count" -eq 0 ]; then
     echo "file '$f' is empty" >&2
     exit 1
   fi
 
   # check given actor htsvoice
-  local hts="$(
+  local hts
+  hts="$(
     find /usr/share/hts-voice/ -name "${a}.htsvoice" -type f |
-    head -1
+      head -1
   )"
   if [ -z "$hts" ]; then
     echo "actor '$f' is not found" >&2
@@ -56,12 +59,12 @@ main() {
   fi
   grep -vE "^#" "$f" |
     while read -r line; do
-      if [[ "$line" = *min ]]; then
+      if [[ $line == *min ]]; then
         sleep "${line//min/}m"
-      elif [[ "$line" = "" ]]; then
+      elif [[ $line == "" ]]; then
         sleep 0.3
       else
-        echo "$line" | yomi "$hts"  2> /dev/null
+        echo "$line" | yomi "$hts" 2> /dev/null
       fi
       sleep 0.01
     done
