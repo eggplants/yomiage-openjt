@@ -1,6 +1,9 @@
 # yomiage
 
 - OpenJTalkくんの研究
+- Debianのみで動作
+  - よしなに書き換えれば他distroでも動くはず
+  - `src/prepare_openjt.sh`のaptとかね
 
 ## はじめに
 
@@ -26,8 +29,8 @@
 
 ## 正規化(正常に読んでもらうためのコツ)
 
-- 改行コードをCR+LFをLFのみに（\rを削る）
-- 改行をいったん全て削り、句点のあとに改行コード（\n）を挿入
+- 改行コードをCR+LFをLFに置換(`\r`を削る)
+- 改行をいったん全て削り、句点のあとに改行(`\n`)を挿入
 
 ```bash
 cat hoge_file.txt | tr -d \\n\\r | sed -r 's/。/&\n/g'
