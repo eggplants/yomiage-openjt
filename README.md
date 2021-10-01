@@ -17,10 +17,11 @@
 ./allvoice_test.sh
 # yahooトップページニュース読み上げ
 ./read_yahoo.sh
-# cv. 白狐舞
-./read.sh - <<< こんにちは
+# ./read.sh <file> <actor>
+./read.sh - 白狐舞 <<< こんにちは
+./src/read.sh - 唱地ヨエ <<< おはよう
 # ファイル読み上げ
-./read.sh beginner.txt
+./read.sh beginner.txt 白狐舞
 ```
 
 ## 正規化(正常に読んでもらうためのコツ)

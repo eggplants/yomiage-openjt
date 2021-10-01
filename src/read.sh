@@ -19,8 +19,9 @@ chkcmd() {
 
 yomi() {
   cat - |
-    open_jtalk -x /var/lib/mecab/dic/open-jtalk/naist-jdic \
-      -m /usr/share/hts-voice/白狐舞_1.0/白狐舞.htsvoice \
+    open_jtalk \
+      -x /var/lib/mecab/dic/open-jtalk/naist-jdic \
+      -m "$1" \
       -ow /dev/stdout -r 0.8 |
     aplay --quiet
 }
@@ -28,14 +29,39 @@ yomi() {
 main() {
   chkcmd open_jtalk aplay
   trap 'kill $$' 1 2 3 15
-  grep -vE "^#" "$1" |
+  local f="${1-/dev/stdin}"
+  local a="${2-白狐舞}"
+
+  # check given input file
+  if [ "$f" = '-' ]; then
+    f="/dev/stdin"
+  fi
+  if ! [ -f "$f" ]; then
+    echo "file '$f' is not file"
+    exit 1
+  fi
+  if [ $(wc -c < "$f") -eq 0 ]; then
+    echo "file '$f' is empty" >&2
+    exit 1
+  fi
+
+  # check given actor htsvoice
+  local hts="$(
+    find /usr/share/hts-voice/ -name "${a}.htsvoice" -type f |
+    head -1
+  )"
+  if [ -z "$hts" ]; then
+    echo "actor '$f' is not found" >&2
+    exit 1
+  fi
+  grep -vE "^#" "$f" |
     while read -r line; do
-      if [[ $line == *min ]]; then
+      if [[ "$line" = *min ]]; then
         sleep "${line//min/}m"
-      elif [[ $line == "" ]]; then
+      elif [[ "$line" = "" ]]; then
         sleep 0.3
       else
-        echo "$line" | yomi 2 > /dev/null
+        echo "$line" | yomi "$hts"  2> /dev/null
       fi
       sleep 0.01
     done
