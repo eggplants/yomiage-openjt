@@ -23,7 +23,7 @@
 ./read_yahoo.sh
 # ./read.sh <file> <actor>
 ./read.sh - 白狐舞 <<< こんにちは
-./src/read.sh - 唱地ヨエ <<< おはよう
+./read.sh - 唱地ヨエ <<< おはよう
 # ファイル読み上げ
 ./read.sh beginner.txt 白狐舞
 ```
