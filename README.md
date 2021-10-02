@@ -18,7 +18,7 @@ $ sudo ./down_akihito.sh
 <summary>インストールされるモデル一覧</summary>
 
 ```shellsession
-->>> ./installed_model_list.sh                                                                                                                                                                                  +[master]
+$ ./installed_model_list.sh
 句音コノ。        /usr/share/hts-voice/句音コノ。_1.0/句音コノ。.htsvoice
 遠藤愛            /usr/share/hts-voice/遠藤愛_1.0/遠藤愛.htsvoice
 瑞歌ミズキ_Talk   /usr/share/hts-voice/瑞歌ミズキ_Talk_1.0/瑞歌ミズキ_Talk.htsvoice
