@@ -86,21 +86,20 @@ main() {
   local line_count idx
   line_count="$(wc < "$f" -l)"
   idx=0
-  grep -vE "^#" "$f" |
-    while read -r line; do
-      ((idx++))
-      echo -ne "\r[${idx}/${line_count}]"
-      if [[ $line =~ .*min$ ]]; then
-        local m
-        m="${line//min/}"
-        sox -n -r 48000 -c 1 "$TMP/$(uuidgen).wav" trim 0 "$(bc <<< "${m}*60" | sed 's/^\./0&/')"
-      elif [[ -z $line ]]; then
-        sox -n -r 48000 -c 1 "$TMP/$(uuidgen).wav" trim 0 0.3
-      else
-        echo "$line" | yomi "$hts" 2> /dev/null
-      fi
-      sleep 0.01
-    done
+  while read -r line; do
+    ((idx++))
+    echo -ne "\r[${idx}/${line_count}]"
+    if [[ $line =~ .*min$ ]]; then
+      local m
+      m="${line//min/}"
+      sox -n -r 48000 -c 1 "$TMP/$(uuidgen).wav" trim 0 "$(bc <<< "${m}*60" | sed 's/^\./0&/')"
+    elif [[ -z $line ]]; then
+      sox -n -r 48000 -c 1 "$TMP/$(uuidgen).wav" trim 0 0.3
+    else
+      echo "$line" | yomi "$hts" 2> /dev/null
+    fi
+    sleep 0.01
+  done < <(grep -vE "^#" "$f")
 
   echo
   ls "$TMP"/*.wav -tr > "$TMP/_list"
