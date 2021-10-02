@@ -29,8 +29,7 @@ RUN git clone --depth 1 https://github.com/eggplants/yomiage_openjt
 WORKDIR /tmp/yomiage_openjt
 
 RUN ./src/prepare_openjt.sh \
-    && ./src/down/_akihito.sh
+    && ./src/down_akihiro.sh
 
 WORKDIR /
-
-
+RUN rm /tmp/ -rf
