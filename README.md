@@ -17,7 +17,7 @@
 ## 依存
 
 ```shellsession
-$ grep -r "  chkcmd"|awk '{for(i=3;i<=NF;)print$(i++)}'|sort|uniq|xargs
+$ grep -r "  chkcmd" | awk '{for(i=3;i<=NF;)print$(i++)}' | sort | uniq | xargs
 aplay apt bc curl open_jtalk sox unar unzip wget
 ```
 
