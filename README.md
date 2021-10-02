@@ -10,7 +10,7 @@
 ```bash
 # open_jtalkコマンドのインストール
 ./prepare_openjt.sh
-# 様々なボイスモデルをインストール(任意)
+# 色々なボイスモデルをインストール
 ./down_akihito.sh
 ```
 
