@@ -2,7 +2,7 @@
 
 chkcmd() {
   if [ $# -eq 0 ]; then
-    echo "Usage: $0 <command> [<command> ...]"
+    echo "usage: $0 <command> [<command> ...]"
     exit 1
   fi
   local NOT_EXIST=""
