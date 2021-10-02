@@ -28,7 +28,7 @@ main() {
     mv "$i" "${i//?dl=1/}"
   done
   find . -name '*.zip' -maxdepth 1 -exec unar {} \;
-  sudo mv ./*_1.0 /usr/share/hts-voice/
+  mv ./*_1.0 /usr/share/hts-voice/
 }
 
 main

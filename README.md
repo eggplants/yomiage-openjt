@@ -7,11 +7,11 @@
 
 ## はじめに
 
-```bash
+```shellsession
 # open_jtalkコマンドのインストール
-./prepare_openjt.sh
+$ sudo ./prepare_openjt.sh
 # 色々なボイスモデルをインストール
-./down_akihito.sh
+$ sudo ./down_akihito.sh
 ```
 
 ## 依存
