@@ -41,10 +41,10 @@ main() {
     rm -rf MMDAgent*
   fi
   # test
-  open_jtalk -x "$dic" \
-    -m "$voice" \
-    -ow /dev/stdout <<< こんにちは |
-    aplay --quiet
+  # open_jtalk -x "$dic" \
+  #   -m "$voice" \
+  #   -ow /dev/stdout <<< こんにちは |
+  #   aplay --quiet
 }
 
 main

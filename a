@@ -1,0 +1,1580 @@
+Sending build context to Docker daemon  160.3kB
+Step 1/11 : FROM ubuntu:21.04
+ ---> de6f83bfe0b6
+Step 2/11 : SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+ ---> Using cache
+ ---> 5e82d48a3358
+Step 3/11 : ENV TZ Asia/Tokyo
+ ---> Using cache
+ ---> c57ebd2b73e7
+Step 4/11 : ENV PYTHONUNBUFFERED 1
+ ---> Using cache
+ ---> b5f962d5c8b5
+Step 5/11 : ENV DEBIAN_FRONTEND noninteractive
+ ---> Using cache
+ ---> 262e9c325410
+Step 6/11 : RUN apt-get update     && apt-get install -y --no-install-recommends     alsa-utils=1.2.4-1ubuntu3     bc=1.07.1-2build2     curl=7.74.0-1ubuntu2.3     git=1:2.30.2-1ubuntu1     open-jtalk     open-jtalk-mecab-naist-jdic     sox=14.4.2+git20190427-2     unar=1.10.1-2build9     unzip=6.0-26ubuntu1     wget=1.21-1ubuntu3     && apt-get autoremove     && apt-get autoclean     && rm -rf /var/lib/apt/lists/*
+ ---> Running in f9985ae8d79a
+Get:1 http://security.ubuntu.com/ubuntu hirsute-security InRelease [110 kB]
+Get:2 http://archive.ubuntu.com/ubuntu hirsute InRelease [269 kB]
+Get:3 http://security.ubuntu.com/ubuntu hirsute-security/main amd64 Packages [319 kB]
+Get:4 http://security.ubuntu.com/ubuntu hirsute-security/universe amd64 Packages [265 kB]
+Get:5 http://archive.ubuntu.com/ubuntu hirsute-updates InRelease [115 kB]
+Get:6 http://security.ubuntu.com/ubuntu hirsute-security/restricted amd64 Packages [255 kB]
+Get:7 http://security.ubuntu.com/ubuntu hirsute-security/multiverse amd64 Packages [3640 B]
+Get:8 http://archive.ubuntu.com/ubuntu hirsute-backports InRelease [101 kB]
+Get:9 http://archive.ubuntu.com/ubuntu hirsute/restricted amd64 Packages [111 kB]
+Get:10 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 Packages [16.8 MB]
+Get:11 http://archive.ubuntu.com/ubuntu hirsute/main amd64 Packages [1791 kB]
+Get:12 http://archive.ubuntu.com/ubuntu hirsute/multiverse amd64 Packages [252 kB]
+Get:13 http://archive.ubuntu.com/ubuntu hirsute-updates/multiverse amd64 Packages [8165 B]
+Get:14 http://archive.ubuntu.com/ubuntu hirsute-updates/restricted amd64 Packages [258 kB]
+Get:15 http://archive.ubuntu.com/ubuntu hirsute-updates/universe amd64 Packages [400 kB]
+Get:16 http://archive.ubuntu.com/ubuntu hirsute-updates/main amd64 Packages [486 kB]
+Get:17 http://archive.ubuntu.com/ubuntu hirsute-backports/universe amd64 Packages [3950 B]
+Fetched 21.6 MB in 10s (2165 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  ca-certificates git-man gnustep-base-common gnustep-base-runtime
+  gnustep-common kmod libasn1-8-heimdal libasound2 libasound2-data
+  libatopology2 libavahi-client3 libavahi-common-data libavahi-common3
+  libbrotli1 libcurl3-gnutls libcurl4 libdbus-1-3 liberror-perl libexpat1
+  libfftw3-single3 libflac8 libgc1 libgdbm-compat4 libgdbm6
+  libgnustep-base1.27 libgomp1 libgsm1 libgssapi3-heimdal libhcrypto4-heimdal
+  libheimbase1-heimdal libheimntlm0-heimdal libhtsengine1 libhx509-5-heimdal
+  libicu67 libkmod2 libkrb5-26-heimdal libldap-2.4-2 libltdl7 libmagic-mgc
+  libmagic1 libnghttp2-14 libobjc4 libogg0 libopencore-amrnb0
+  libopencore-amrwb0 libopus0 libperl5.32 libpng16-16 libpsl5 libreadline8
+  libroken18-heimdal librtmp1 libsamplerate0 libsasl2-2 libsasl2-modules-db
+  libsndfile1 libsox-fmt-alsa libsox-fmt-base libsox3 libsqlite3-0 libssh-4
+  libvorbis0a libvorbisenc2 libvorbisfile3 libwavpack1 libwind0-heimdal
+  libxml2 libxslt1.1 openssl perl perl-modules-5.32 readline-common tzdata
+Suggested packages:
+  dialog gettext-base git-daemon-run | git-daemon-sysvinit git-doc git-el
+  git-email git-gui gitk gitweb git-cvs git-mediawiki git-svn
+  libasound2-plugins libfftw3-bin libfftw3-dev gdbm-l10n file opus-tools
+  libsox-fmt-all hts-voice-nitech-jp-atr503-m001 perl-doc
+  libterm-readline-gnu-perl | libterm-readline-perl-perl make
+  libtap-harness-archive-perl readline-doc zip
+Recommended packages:
+  patch less ssh-client alsa-ucm-conf alsa-topology-conf dbus libldap-common
+  publicsuffix libsasl2-modules netbase
+The following NEW packages will be installed:
+  alsa-utils bc ca-certificates curl git git-man gnustep-base-common
+  gnustep-base-runtime gnustep-common kmod libasn1-8-heimdal libasound2
+  libasound2-data libatopology2 libavahi-client3 libavahi-common-data
+  libavahi-common3 libbrotli1 libcurl3-gnutls libcurl4 libdbus-1-3
+  liberror-perl libexpat1 libfftw3-single3 libflac8 libgc1 libgdbm-compat4
+  libgdbm6 libgnustep-base1.27 libgomp1 libgsm1 libgssapi3-heimdal
+  libhcrypto4-heimdal libheimbase1-heimdal libheimntlm0-heimdal libhtsengine1
+  libhx509-5-heimdal libicu67 libkmod2 libkrb5-26-heimdal libldap-2.4-2
+  libltdl7 libmagic-mgc libmagic1 libnghttp2-14 libobjc4 libogg0
+  libopencore-amrnb0 libopencore-amrwb0 libopus0 libperl5.32 libpng16-16
+  libpsl5 libreadline8 libroken18-heimdal librtmp1 libsamplerate0 libsasl2-2
+  libsasl2-modules-db libsndfile1 libsox-fmt-alsa libsox-fmt-base libsox3
+  libsqlite3-0 libssh-4 libvorbis0a libvorbisenc2 libvorbisfile3 libwavpack1
+  libwind0-heimdal libxml2 libxslt1.1 open-jtalk open-jtalk-mecab-naist-jdic
+  openssl perl perl-modules-5.32 readline-common sox tzdata unar unzip wget
+0 upgraded, 83 newly installed, 0 to remove and 0 not upgraded.
+Need to get 50.7 MB of archives.
+After this operation, 277 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu hirsute-updates/main amd64 perl-modules-5.32 all 5.32.1-3ubuntu2.1 [2755 kB]
+Get:2 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libgdbm6 amd64 1.19-2 [27.5 kB]
+Get:3 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libgdbm-compat4 amd64 1.19-2 [6236 B]
+Get:4 http://archive.ubuntu.com/ubuntu hirsute-updates/main amd64 libperl5.32 amd64 5.32.1-3ubuntu2.1 [4046 kB]
+Get:5 http://archive.ubuntu.com/ubuntu hirsute-updates/main amd64 perl amd64 5.32.1-3ubuntu2.1 [225 kB]
+Get:6 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 gnustep-common amd64 2.8.0-1 [39.3 kB]
+Get:7 http://archive.ubuntu.com/ubuntu hirsute-updates/main amd64 openssl amd64 1.1.1j-1ubuntu3.5 [623 kB]
+Get:8 http://archive.ubuntu.com/ubuntu hirsute-updates/main amd64 ca-certificates all 20210119ubuntu0.21.04.1 [146 kB]
+Get:9 http://archive.ubuntu.com/ubuntu hirsute/main amd64 tzdata all 2021a-1ubuntu1 [294 kB]
+Get:10 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 gnustep-base-common all 1.27.0-3build3 [75.2 kB]
+Get:11 http://archive.ubuntu.com/ubuntu hirsute-updates/main amd64 libavahi-common-data amd64 0.8-5ubuntu3.1 [23.9 kB]
+Get:12 http://archive.ubuntu.com/ubuntu hirsute-updates/main amd64 libavahi-common3 amd64 0.8-5ubuntu3.1 [21.9 kB]
+Get:13 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libdbus-1-3 amd64 1.12.20-1ubuntu3 [183 kB]
+Get:14 http://archive.ubuntu.com/ubuntu hirsute-updates/main amd64 libavahi-client3 amd64 0.8-5ubuntu3.1 [25.7 kB]
+Get:15 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libicu67 amd64 67.1-6ubuntu2 [8619 kB]
+Get:16 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libgc1 amd64 1:8.0.4-3 [88.4 kB]
+Get:17 http://archive.ubuntu.com/ubuntu hirsute-updates/universe amd64 libobjc4 amd64 11.1.0-1ubuntu1~21.04 [43.1 kB]
+Get:18 http://archive.ubuntu.com/ubuntu hirsute-updates/main amd64 libxml2 amd64 2.9.10+dfsg-6.3ubuntu0.1 [698 kB]
+Get:19 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libxslt1.1 amd64 1.1.34-4 [152 kB]
+Get:20 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 libgnustep-base1.27 amd64 1.27.0-3build3 [1385 kB]
+Get:21 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 gnustep-base-runtime amd64 1.27.0-3build3 [209 kB]
+Get:22 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libwavpack1 amd64 5.4.0-1 [77.1 kB]
+Get:23 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 unar amd64 1.10.1-2build9 [1303 kB]
+Get:24 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libkmod2 amd64 28-1ubuntu2 [44.4 kB]
+Get:25 http://archive.ubuntu.com/ubuntu hirsute/main amd64 kmod amd64 28-1ubuntu2 [94.8 kB]
+Get:26 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libexpat1 amd64 2.2.10-2 [76.2 kB]
+Get:27 http://archive.ubuntu.com/ubuntu hirsute/main amd64 readline-common all 8.1-1 [54.1 kB]
+Get:28 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libreadline8 amd64 8.1-1 [137 kB]
+Get:29 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libsqlite3-0 amd64 3.34.1-3 [588 kB]
+Get:30 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libmagic-mgc amd64 1:5.39-3 [228 kB]
+Get:31 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libmagic1 amd64 1:5.39-3 [80.6 kB]
+Get:32 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libpng16-16 amd64 1.6.37-3build3 [184 kB]
+Get:33 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libpsl5 amd64 0.21.0-1.2 [53.5 kB]
+Get:34 http://archive.ubuntu.com/ubuntu hirsute/main amd64 wget amd64 1.21-1ubuntu3 [351 kB]
+Get:35 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libasound2-data all 1.2.4-1.1ubuntu2 [18.8 kB]
+Get:36 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libasound2 amd64 1.2.4-1.1ubuntu2 [335 kB]
+Get:37 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libatopology2 amd64 1.2.4-1.1ubuntu2 [47.2 kB]
+Get:38 http://archive.ubuntu.com/ubuntu hirsute-updates/main amd64 libgomp1 amd64 11.1.0-1ubuntu1~21.04 [107 kB]
+Get:39 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libfftw3-single3 amd64 3.3.8-2ubuntu6 [756 kB]
+Get:40 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libsamplerate0 amd64 0.2.1+ds0-1 [939 kB]
+Get:41 http://archive.ubuntu.com/ubuntu hirsute/main amd64 alsa-utils amd64 1.2.4-1ubuntu3 [1025 kB]
+Get:42 http://archive.ubuntu.com/ubuntu hirsute/main amd64 bc amd64 1.07.1-2build2 [85.0 kB]
+Get:43 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libbrotli1 amd64 1.0.9-2build2 [274 kB]
+Get:44 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libroken18-heimdal amd64 7.7.0+dfsg-2 [41.8 kB]
+Get:45 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libasn1-8-heimdal amd64 7.7.0+dfsg-2 [181 kB]
+Get:46 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libheimbase1-heimdal amd64 7.7.0+dfsg-2 [29.7 kB]
+Get:47 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libhcrypto4-heimdal amd64 7.7.0+dfsg-2 [88.0 kB]
+Get:48 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libwind0-heimdal amd64 7.7.0+dfsg-2 [47.6 kB]
+Get:49 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libhx509-5-heimdal amd64 7.7.0+dfsg-2 [107 kB]
+Get:50 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libkrb5-26-heimdal amd64 7.7.0+dfsg-2 [207 kB]
+Get:51 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libheimntlm0-heimdal amd64 7.7.0+dfsg-2 [15.1 kB]
+Get:52 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libgssapi3-heimdal amd64 7.7.0+dfsg-2 [96.5 kB]
+Get:53 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libsasl2-modules-db amd64 2.1.27+dfsg-2ubuntu1 [14.7 kB]
+Get:54 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libsasl2-2 amd64 2.1.27+dfsg-2ubuntu1 [49.3 kB]
+Get:55 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libldap-2.4-2 amd64 2.4.57+dfsg-2ubuntu1 [156 kB]
+Get:56 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libnghttp2-14 amd64 1.43.0-1 [72.5 kB]
+Get:57 http://archive.ubuntu.com/ubuntu hirsute/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2build2 [55.0 kB]
+Get:58 http://archive.ubuntu.com/ubuntu hirsute-updates/main amd64 libssh-4 amd64 0.9.5-1ubuntu0.1 [170 kB]
+Get:59 http://archive.ubuntu.com/ubuntu hirsute-updates/main amd64 libcurl4 amd64 7.74.0-1ubuntu2.3 [252 kB]
+Get:60 http://archive.ubuntu.com/ubuntu hirsute-updates/main amd64 curl amd64 7.74.0-1ubuntu2.3 [170 kB]
+Get:61 http://archive.ubuntu.com/ubuntu hirsute-updates/main amd64 libcurl3-gnutls amd64 7.74.0-1ubuntu2.3 [248 kB]
+Get:62 http://archive.ubuntu.com/ubuntu hirsute/main amd64 liberror-perl all 0.17029-1 [26.5 kB]
+Get:63 http://archive.ubuntu.com/ubuntu hirsute/main amd64 git-man all 1:2.30.2-1ubuntu1 [931 kB]
+Get:64 http://archive.ubuntu.com/ubuntu hirsute/main amd64 git amd64 1:2.30.2-1ubuntu1 [3457 kB]
+Get:65 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libogg0 amd64 1.3.4-0.1 [24.2 kB]
+Get:66 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libflac8 amd64 1.3.3-2 [103 kB]
+Get:67 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 libgsm1 amd64 1.0.18-2 [24.4 kB]
+Get:68 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libltdl7 amd64 2.4.6-15 [38.8 kB]
+Get:69 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 libopencore-amrnb0 amd64 0.1.5-1 [94.8 kB]
+Get:70 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 libopencore-amrwb0 amd64 0.1.5-1 [49.1 kB]
+Get:71 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libopus0 amd64 1.3.1-0.1 [190 kB]
+Get:72 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libvorbis0a amd64 1.3.7-1 [86.1 kB]
+Get:73 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libvorbisenc2 amd64 1.3.7-1 [70.7 kB]
+Get:74 http://archive.ubuntu.com/ubuntu hirsute-updates/main amd64 libsndfile1 amd64 1.0.31-1ubuntu1.1 [182 kB]
+Get:75 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 libsox3 amd64 14.4.2+git20190427-2 [226 kB]
+Get:76 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 libsox-fmt-alsa amd64 14.4.2+git20190427-2 [10.5 kB]
+Get:77 http://archive.ubuntu.com/ubuntu hirsute/main amd64 libvorbisfile3 amd64 1.3.7-1 [16.1 kB]
+Get:78 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 libsox-fmt-base amd64 14.4.2+git20190427-2 [31.5 kB]
+Get:79 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 sox amd64 14.4.2+git20190427-2 [102 kB]
+Get:80 http://archive.ubuntu.com/ubuntu hirsute/main amd64 unzip amd64 6.0-26ubuntu1 [168 kB]
+Get:81 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 libhtsengine1 amd64 1.10-4 [42.5 kB]
+Get:82 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 open-jtalk amd64 1.11-1.1 [190 kB]
+Get:83 http://archive.ubuntu.com/ubuntu hirsute/universe amd64 open-jtalk-mecab-naist-jdic all 1.11-1.1 [16.0 MB]
+[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0mFetched 50.7 MB in 14s (3601 kB/s)
+Selecting previously unselected package perl-modules-5.32.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4342 files and directories currently installed.)
+Preparing to unpack .../00-perl-modules-5.32_5.32.1-3ubuntu2.1_all.deb ...
+Unpacking perl-modules-5.32 (5.32.1-3ubuntu2.1) ...
+Selecting previously unselected package libgdbm6:amd64.
+Preparing to unpack .../01-libgdbm6_1.19-2_amd64.deb ...
+Unpacking libgdbm6:amd64 (1.19-2) ...
+Selecting previously unselected package libgdbm-compat4:amd64.
+Preparing to unpack .../02-libgdbm-compat4_1.19-2_amd64.deb ...
+Unpacking libgdbm-compat4:amd64 (1.19-2) ...
+Selecting previously unselected package libperl5.32:amd64.
+Preparing to unpack .../03-libperl5.32_5.32.1-3ubuntu2.1_amd64.deb ...
+Unpacking libperl5.32:amd64 (5.32.1-3ubuntu2.1) ...
+Selecting previously unselected package perl.
+Preparing to unpack .../04-perl_5.32.1-3ubuntu2.1_amd64.deb ...
+Unpacking perl (5.32.1-3ubuntu2.1) ...
+Selecting previously unselected package gnustep-common.
+Preparing to unpack .../05-gnustep-common_2.8.0-1_amd64.deb ...
+Unpacking gnustep-common (2.8.0-1) ...
+Selecting previously unselected package openssl.
+Preparing to unpack .../06-openssl_1.1.1j-1ubuntu3.5_amd64.deb ...
+Unpacking openssl (1.1.1j-1ubuntu3.5) ...
+Selecting previously unselected package ca-certificates.
+Preparing to unpack .../07-ca-certificates_20210119ubuntu0.21.04.1_all.deb ...
+Unpacking ca-certificates (20210119ubuntu0.21.04.1) ...
+Selecting previously unselected package tzdata.
+Preparing to unpack .../08-tzdata_2021a-1ubuntu1_all.deb ...
+Unpacking tzdata (2021a-1ubuntu1) ...
+Selecting previously unselected package gnustep-base-common.
+Preparing to unpack .../09-gnustep-base-common_1.27.0-3build3_all.deb ...
+Unpacking gnustep-base-common (1.27.0-3build3) ...
+Selecting previously unselected package libavahi-common-data:amd64.
+Preparing to unpack .../10-libavahi-common-data_0.8-5ubuntu3.1_amd64.deb ...
+Unpacking libavahi-common-data:amd64 (0.8-5ubuntu3.1) ...
+Selecting previously unselected package libavahi-common3:amd64.
+Preparing to unpack .../11-libavahi-common3_0.8-5ubuntu3.1_amd64.deb ...
+Unpacking libavahi-common3:amd64 (0.8-5ubuntu3.1) ...
+Selecting previously unselected package libdbus-1-3:amd64.
+Preparing to unpack .../12-libdbus-1-3_1.12.20-1ubuntu3_amd64.deb ...
+Unpacking libdbus-1-3:amd64 (1.12.20-1ubuntu3) ...
+Selecting previously unselected package libavahi-client3:amd64.
+Preparing to unpack .../13-libavahi-client3_0.8-5ubuntu3.1_amd64.deb ...
+Unpacking libavahi-client3:amd64 (0.8-5ubuntu3.1) ...
+Selecting previously unselected package libicu67:amd64.
+Preparing to unpack .../14-libicu67_67.1-6ubuntu2_amd64.deb ...
+Unpacking libicu67:amd64 (67.1-6ubuntu2) ...
+Selecting previously unselected package libgc1:amd64.
+Preparing to unpack .../15-libgc1_1%3a8.0.4-3_amd64.deb ...
+Unpacking libgc1:amd64 (1:8.0.4-3) ...
+Selecting previously unselected package libobjc4:amd64.
+Preparing to unpack .../16-libobjc4_11.1.0-1ubuntu1~21.04_amd64.deb ...
+Unpacking libobjc4:amd64 (11.1.0-1ubuntu1~21.04) ...
+Selecting previously unselected package libxml2:amd64.
+Preparing to unpack .../17-libxml2_2.9.10+dfsg-6.3ubuntu0.1_amd64.deb ...
+Unpacking libxml2:amd64 (2.9.10+dfsg-6.3ubuntu0.1) ...
+Selecting previously unselected package libxslt1.1:amd64.
+Preparing to unpack .../18-libxslt1.1_1.1.34-4_amd64.deb ...
+Unpacking libxslt1.1:amd64 (1.1.34-4) ...
+Selecting previously unselected package libgnustep-base1.27.
+Preparing to unpack .../19-libgnustep-base1.27_1.27.0-3build3_amd64.deb ...
+Unpacking libgnustep-base1.27 (1.27.0-3build3) ...
+Selecting previously unselected package gnustep-base-runtime.
+Preparing to unpack .../20-gnustep-base-runtime_1.27.0-3build3_amd64.deb ...
+Unpacking gnustep-base-runtime (1.27.0-3build3) ...
+Selecting previously unselected package libwavpack1:amd64.
+Preparing to unpack .../21-libwavpack1_5.4.0-1_amd64.deb ...
+Unpacking libwavpack1:amd64 (5.4.0-1) ...
+Selecting previously unselected package unar.
+Preparing to unpack .../22-unar_1.10.1-2build9_amd64.deb ...
+Unpacking unar (1.10.1-2build9) ...
+Selecting previously unselected package libkmod2:amd64.
+Preparing to unpack .../23-libkmod2_28-1ubuntu2_amd64.deb ...
+Unpacking libkmod2:amd64 (28-1ubuntu2) ...
+Selecting previously unselected package kmod.
+Preparing to unpack .../24-kmod_28-1ubuntu2_amd64.deb ...
+Unpacking kmod (28-1ubuntu2) ...
+Selecting previously unselected package libexpat1:amd64.
+Preparing to unpack .../25-libexpat1_2.2.10-2_amd64.deb ...
+Unpacking libexpat1:amd64 (2.2.10-2) ...
+Selecting previously unselected package readline-common.
+Preparing to unpack .../26-readline-common_8.1-1_all.deb ...
+Unpacking readline-common (8.1-1) ...
+Selecting previously unselected package libreadline8:amd64.
+Preparing to unpack .../27-libreadline8_8.1-1_amd64.deb ...
+Unpacking libreadline8:amd64 (8.1-1) ...
+Selecting previously unselected package libsqlite3-0:amd64.
+Preparing to unpack .../28-libsqlite3-0_3.34.1-3_amd64.deb ...
+Unpacking libsqlite3-0:amd64 (3.34.1-3) ...
+Selecting previously unselected package libmagic-mgc.
+Preparing to unpack .../29-libmagic-mgc_1%3a5.39-3_amd64.deb ...
+Unpacking libmagic-mgc (1:5.39-3) ...
+Selecting previously unselected package libmagic1:amd64.
+Preparing to unpack .../30-libmagic1_1%3a5.39-3_amd64.deb ...
+Unpacking libmagic1:amd64 (1:5.39-3) ...
+Selecting previously unselected package libpng16-16:amd64.
+Preparing to unpack .../31-libpng16-16_1.6.37-3build3_amd64.deb ...
+Unpacking libpng16-16:amd64 (1.6.37-3build3) ...
+Selecting previously unselected package libpsl5:amd64.
+Preparing to unpack .../32-libpsl5_0.21.0-1.2_amd64.deb ...
+Unpacking libpsl5:amd64 (0.21.0-1.2) ...
+Selecting previously unselected package wget.
+Preparing to unpack .../33-wget_1.21-1ubuntu3_amd64.deb ...
+Unpacking wget (1.21-1ubuntu3) ...
+Selecting previously unselected package libasound2-data.
+Preparing to unpack .../34-libasound2-data_1.2.4-1.1ubuntu2_all.deb ...
+Unpacking libasound2-data (1.2.4-1.1ubuntu2) ...
+Selecting previously unselected package libasound2:amd64.
+Preparing to unpack .../35-libasound2_1.2.4-1.1ubuntu2_amd64.deb ...
+Unpacking libasound2:amd64 (1.2.4-1.1ubuntu2) ...
+Selecting previously unselected package libatopology2:amd64.
+Preparing to unpack .../36-libatopology2_1.2.4-1.1ubuntu2_amd64.deb ...
+Unpacking libatopology2:amd64 (1.2.4-1.1ubuntu2) ...
+Selecting previously unselected package libgomp1:amd64.
+Preparing to unpack .../37-libgomp1_11.1.0-1ubuntu1~21.04_amd64.deb ...
+Unpacking libgomp1:amd64 (11.1.0-1ubuntu1~21.04) ...
+Selecting previously unselected package libfftw3-single3:amd64.
+Preparing to unpack .../38-libfftw3-single3_3.3.8-2ubuntu6_amd64.deb ...
+Unpacking libfftw3-single3:amd64 (3.3.8-2ubuntu6) ...
+Selecting previously unselected package libsamplerate0:amd64.
+Preparing to unpack .../39-libsamplerate0_0.2.1+ds0-1_amd64.deb ...
+Unpacking libsamplerate0:amd64 (0.2.1+ds0-1) ...
+Selecting previously unselected package alsa-utils.
+Preparing to unpack .../40-alsa-utils_1.2.4-1ubuntu3_amd64.deb ...
+Unpacking alsa-utils (1.2.4-1ubuntu3) ...
+Selecting previously unselected package bc.
+Preparing to unpack .../41-bc_1.07.1-2build2_amd64.deb ...
+Unpacking bc (1.07.1-2build2) ...
+Selecting previously unselected package libbrotli1:amd64.
+Preparing to unpack .../42-libbrotli1_1.0.9-2build2_amd64.deb ...
+Unpacking libbrotli1:amd64 (1.0.9-2build2) ...
+Selecting previously unselected package libroken18-heimdal:amd64.
+Preparing to unpack .../43-libroken18-heimdal_7.7.0+dfsg-2_amd64.deb ...
+Unpacking libroken18-heimdal:amd64 (7.7.0+dfsg-2) ...
+Selecting previously unselected package libasn1-8-heimdal:amd64.
+Preparing to unpack .../44-libasn1-8-heimdal_7.7.0+dfsg-2_amd64.deb ...
+Unpacking libasn1-8-heimdal:amd64 (7.7.0+dfsg-2) ...
+Selecting previously unselected package libheimbase1-heimdal:amd64.
+Preparing to unpack .../45-libheimbase1-heimdal_7.7.0+dfsg-2_amd64.deb ...
+Unpacking libheimbase1-heimdal:amd64 (7.7.0+dfsg-2) ...
+Selecting previously unselected package libhcrypto4-heimdal:amd64.
+Preparing to unpack .../46-libhcrypto4-heimdal_7.7.0+dfsg-2_amd64.deb ...
+Unpacking libhcrypto4-heimdal:amd64 (7.7.0+dfsg-2) ...
+Selecting previously unselected package libwind0-heimdal:amd64.
+Preparing to unpack .../47-libwind0-heimdal_7.7.0+dfsg-2_amd64.deb ...
+Unpacking libwind0-heimdal:amd64 (7.7.0+dfsg-2) ...
+Selecting previously unselected package libhx509-5-heimdal:amd64.
+Preparing to unpack .../48-libhx509-5-heimdal_7.7.0+dfsg-2_amd64.deb ...
+Unpacking libhx509-5-heimdal:amd64 (7.7.0+dfsg-2) ...
+Selecting previously unselected package libkrb5-26-heimdal:amd64.
+Preparing to unpack .../49-libkrb5-26-heimdal_7.7.0+dfsg-2_amd64.deb ...
+Unpacking libkrb5-26-heimdal:amd64 (7.7.0+dfsg-2) ...
+Selecting previously unselected package libheimntlm0-heimdal:amd64.
+Preparing to unpack .../50-libheimntlm0-heimdal_7.7.0+dfsg-2_amd64.deb ...
+Unpacking libheimntlm0-heimdal:amd64 (7.7.0+dfsg-2) ...
+Selecting previously unselected package libgssapi3-heimdal:amd64.
+Preparing to unpack .../51-libgssapi3-heimdal_7.7.0+dfsg-2_amd64.deb ...
+Unpacking libgssapi3-heimdal:amd64 (7.7.0+dfsg-2) ...
+Selecting previously unselected package libsasl2-modules-db:amd64.
+Preparing to unpack .../52-libsasl2-modules-db_2.1.27+dfsg-2ubuntu1_amd64.deb ...
+Unpacking libsasl2-modules-db:amd64 (2.1.27+dfsg-2ubuntu1) ...
+Selecting previously unselected package libsasl2-2:amd64.
+Preparing to unpack .../53-libsasl2-2_2.1.27+dfsg-2ubuntu1_amd64.deb ...
+Unpacking libsasl2-2:amd64 (2.1.27+dfsg-2ubuntu1) ...
+Selecting previously unselected package libldap-2.4-2:amd64.
+Preparing to unpack .../54-libldap-2.4-2_2.4.57+dfsg-2ubuntu1_amd64.deb ...
+Unpacking libldap-2.4-2:amd64 (2.4.57+dfsg-2ubuntu1) ...
+Selecting previously unselected package libnghttp2-14:amd64.
+Preparing to unpack .../55-libnghttp2-14_1.43.0-1_amd64.deb ...
+Unpacking libnghttp2-14:amd64 (1.43.0-1) ...
+Selecting previously unselected package librtmp1:amd64.
+Preparing to unpack .../56-librtmp1_2.4+20151223.gitfa8646d.1-2build2_amd64.deb ...
+Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2build2) ...
+Selecting previously unselected package libssh-4:amd64.
+Preparing to unpack .../57-libssh-4_0.9.5-1ubuntu0.1_amd64.deb ...
+Unpacking libssh-4:amd64 (0.9.5-1ubuntu0.1) ...
+Selecting previously unselected package libcurl4:amd64.
+Preparing to unpack .../58-libcurl4_7.74.0-1ubuntu2.3_amd64.deb ...
+Unpacking libcurl4:amd64 (7.74.0-1ubuntu2.3) ...
+Selecting previously unselected package curl.
+Preparing to unpack .../59-curl_7.74.0-1ubuntu2.3_amd64.deb ...
+Unpacking curl (7.74.0-1ubuntu2.3) ...
+Selecting previously unselected package libcurl3-gnutls:amd64.
+Preparing to unpack .../60-libcurl3-gnutls_7.74.0-1ubuntu2.3_amd64.deb ...
+Unpacking libcurl3-gnutls:amd64 (7.74.0-1ubuntu2.3) ...
+Selecting previously unselected package liberror-perl.
+Preparing to unpack .../61-liberror-perl_0.17029-1_all.deb ...
+Unpacking liberror-perl (0.17029-1) ...
+Selecting previously unselected package git-man.
+Preparing to unpack .../62-git-man_1%3a2.30.2-1ubuntu1_all.deb ...
+Unpacking git-man (1:2.30.2-1ubuntu1) ...
+Selecting previously unselected package git.
+Preparing to unpack .../63-git_1%3a2.30.2-1ubuntu1_amd64.deb ...
+Unpacking git (1:2.30.2-1ubuntu1) ...
+Selecting previously unselected package libogg0:amd64.
+Preparing to unpack .../64-libogg0_1.3.4-0.1_amd64.deb ...
+Unpacking libogg0:amd64 (1.3.4-0.1) ...
+Selecting previously unselected package libflac8:amd64.
+Preparing to unpack .../65-libflac8_1.3.3-2_amd64.deb ...
+Unpacking libflac8:amd64 (1.3.3-2) ...
+Selecting previously unselected package libgsm1:amd64.
+Preparing to unpack .../66-libgsm1_1.0.18-2_amd64.deb ...
+Unpacking libgsm1:amd64 (1.0.18-2) ...
+Selecting previously unselected package libltdl7:amd64.
+Preparing to unpack .../67-libltdl7_2.4.6-15_amd64.deb ...
+Unpacking libltdl7:amd64 (2.4.6-15) ...
+Selecting previously unselected package libopencore-amrnb0:amd64.
+Preparing to unpack .../68-libopencore-amrnb0_0.1.5-1_amd64.deb ...
+Unpacking libopencore-amrnb0:amd64 (0.1.5-1) ...
+Selecting previously unselected package libopencore-amrwb0:amd64.
+Preparing to unpack .../69-libopencore-amrwb0_0.1.5-1_amd64.deb ...
+Unpacking libopencore-amrwb0:amd64 (0.1.5-1) ...
+Selecting previously unselected package libopus0:amd64.
+Preparing to unpack .../70-libopus0_1.3.1-0.1_amd64.deb ...
+Unpacking libopus0:amd64 (1.3.1-0.1) ...
+Selecting previously unselected package libvorbis0a:amd64.
+Preparing to unpack .../71-libvorbis0a_1.3.7-1_amd64.deb ...
+Unpacking libvorbis0a:amd64 (1.3.7-1) ...
+Selecting previously unselected package libvorbisenc2:amd64.
+Preparing to unpack .../72-libvorbisenc2_1.3.7-1_amd64.deb ...
+Unpacking libvorbisenc2:amd64 (1.3.7-1) ...
+Selecting previously unselected package libsndfile1:amd64.
+Preparing to unpack .../73-libsndfile1_1.0.31-1ubuntu1.1_amd64.deb ...
+Unpacking libsndfile1:amd64 (1.0.31-1ubuntu1.1) ...
+Selecting previously unselected package libsox3:amd64.
+Preparing to unpack .../74-libsox3_14.4.2+git20190427-2_amd64.deb ...
+Unpacking libsox3:amd64 (14.4.2+git20190427-2) ...
+Selecting previously unselected package libsox-fmt-alsa:amd64.
+Preparing to unpack .../75-libsox-fmt-alsa_14.4.2+git20190427-2_amd64.deb ...
+Unpacking libsox-fmt-alsa:amd64 (14.4.2+git20190427-2) ...
+Selecting previously unselected package libvorbisfile3:amd64.
+Preparing to unpack .../76-libvorbisfile3_1.3.7-1_amd64.deb ...
+Unpacking libvorbisfile3:amd64 (1.3.7-1) ...
+Selecting previously unselected package libsox-fmt-base:amd64.
+Preparing to unpack .../77-libsox-fmt-base_14.4.2+git20190427-2_amd64.deb ...
+Unpacking libsox-fmt-base:amd64 (14.4.2+git20190427-2) ...
+Selecting previously unselected package sox.
+Preparing to unpack .../78-sox_14.4.2+git20190427-2_amd64.deb ...
+Unpacking sox (14.4.2+git20190427-2) ...
+Selecting previously unselected package unzip.
+Preparing to unpack .../79-unzip_6.0-26ubuntu1_amd64.deb ...
+Unpacking unzip (6.0-26ubuntu1) ...
+Selecting previously unselected package libhtsengine1:amd64.
+Preparing to unpack .../80-libhtsengine1_1.10-4_amd64.deb ...
+Unpacking libhtsengine1:amd64 (1.10-4) ...
+Selecting previously unselected package open-jtalk.
+Preparing to unpack .../81-open-jtalk_1.11-1.1_amd64.deb ...
+Unpacking open-jtalk (1.11-1.1) ...
+Selecting previously unselected package open-jtalk-mecab-naist-jdic.
+Preparing to unpack .../82-open-jtalk-mecab-naist-jdic_1.11-1.1_all.deb ...
+Unpacking open-jtalk-mecab-naist-jdic (1.11-1.1) ...
+Setting up libexpat1:amd64 (2.2.10-2) ...
+Setting up libpsl5:amd64 (0.21.0-1.2) ...
+Setting up libogg0:amd64 (1.3.4-0.1) ...
+Setting up gnustep-common (2.8.0-1) ...
+Setting up wget (1.21-1ubuntu3) ...
+Setting up libicu67:amd64 (67.1-6ubuntu2) ...
+Setting up libmagic-mgc (1:5.39-3) ...
+Setting up libgsm1:amd64 (1.0.18-2) ...
+Setting up unzip (6.0-26ubuntu1) ...
+Setting up perl-modules-5.32 (5.32.1-3ubuntu2.1) ...
+Setting up libbrotli1:amd64 (1.0.9-2build2) ...
+Setting up libsqlite3-0:amd64 (3.34.1-3) ...
+Setting up libnghttp2-14:amd64 (1.43.0-1) ...
+Setting up libmagic1:amd64 (1:5.39-3) ...
+Setting up libhtsengine1:amd64 (1.10-4) ...
+Setting up libgomp1:amd64 (11.1.0-1ubuntu1~21.04) ...
+Setting up libflac8:amd64 (1.3.3-2) ...
+Setting up libsasl2-modules-db:amd64 (2.1.27+dfsg-2ubuntu1) ...
+Setting up tzdata (2021a-1ubuntu1) ...
+
+Current default time zone: 'Etc/UTC'
+Local time is now:      Sat Oct  2 03:06:29 UTC 2021.
+Universal Time is now:  Sat Oct  2 03:06:29 UTC 2021.
+Run 'dpkg-reconfigure tzdata' if you wish to change it.
+
+Setting up libasound2-data (1.2.4-1.1ubuntu2) ...
+Setting up libopencore-amrwb0:amd64 (0.1.5-1) ...
+Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2build2) ...
+Setting up libavahi-common-data:amd64 (0.8-5ubuntu3.1) ...
+Setting up libdbus-1-3:amd64 (1.12.20-1ubuntu3) ...
+Setting up libopus0:amd64 (1.3.1-0.1) ...
+Setting up libpng16-16:amd64 (1.6.37-3build3) ...
+Setting up libvorbis0a:amd64 (1.3.7-1) ...
+Setting up libgc1:amd64 (1:8.0.4-3) ...
+Setting up libltdl7:amd64 (2.4.6-15) ...
+Setting up libsasl2-2:amd64 (2.1.27+dfsg-2ubuntu1) ...
+Setting up libssh-4:amd64 (0.9.5-1ubuntu0.1) ...
+Setting up libroken18-heimdal:amd64 (7.7.0+dfsg-2) ...
+Setting up libwavpack1:amd64 (5.4.0-1) ...
+Setting up libasound2:amd64 (1.2.4-1.1ubuntu2) ...
+Setting up libopencore-amrnb0:amd64 (0.1.5-1) ...
+Setting up git-man (1:2.30.2-1ubuntu1) ...
+Setting up open-jtalk-mecab-naist-jdic (1.11-1.1) ...
+Setting up libsamplerate0:amd64 (0.2.1+ds0-1) ...
+Setting up openssl (1.1.1j-1ubuntu3.5) ...
+Setting up libatopology2:amd64 (1.2.4-1.1ubuntu2) ...
+Setting up readline-common (8.1-1) ...
+Setting up libxml2:amd64 (2.9.10+dfsg-6.3ubuntu0.1) ...
+Setting up libvorbisenc2:amd64 (1.3.7-1) ...
+Setting up libkmod2:amd64 (28-1ubuntu2) ...
+Setting up libheimbase1-heimdal:amd64 (7.7.0+dfsg-2) ...
+Setting up libgdbm6:amd64 (1.19-2) ...
+Setting up libfftw3-single3:amd64 (3.3.8-2ubuntu6) ...
+Setting up libsox3:amd64 (14.4.2+git20190427-2) ...
+Setting up libasn1-8-heimdal:amd64 (7.7.0+dfsg-2) ...
+Setting up libreadline8:amd64 (8.1-1) ...
+Setting up libavahi-common3:amd64 (0.8-5ubuntu3.1) ...
+Setting up open-jtalk (1.11-1.1) ...
+Setting up bc (1.07.1-2build2) ...
+Setting up libobjc4:amd64 (11.1.0-1ubuntu1~21.04) ...
+Setting up kmod (28-1ubuntu2) ...
+Setting up libhcrypto4-heimdal:amd64 (7.7.0+dfsg-2) ...
+Setting up ca-certificates (20210119ubuntu0.21.04.1) ...
+Updating certificates in /etc/ssl/certs...
+128 added, 0 removed; done.
+Setting up libvorbisfile3:amd64 (1.3.7-1) ...
+Setting up alsa-utils (1.2.4-1ubuntu3) ...
+Setting up libwind0-heimdal:amd64 (7.7.0+dfsg-2) ...
+Setting up gnustep-base-common (1.27.0-3build3) ...
+Setting up libgdbm-compat4:amd64 (1.19-2) ...
+Setting up libsox-fmt-alsa:amd64 (14.4.2+git20190427-2) ...
+Setting up libperl5.32:amd64 (5.32.1-3ubuntu2.1) ...
+Setting up libxslt1.1:amd64 (1.1.34-4) ...
+Setting up libsndfile1:amd64 (1.0.31-1ubuntu1.1) ...
+Setting up libavahi-client3:amd64 (0.8-5ubuntu3.1) ...
+Setting up libhx509-5-heimdal:amd64 (7.7.0+dfsg-2) ...
+Setting up perl (5.32.1-3ubuntu2.1) ...
+Setting up libgnustep-base1.27 (1.27.0-3build3) ...
+Setting up libsox-fmt-base:amd64 (14.4.2+git20190427-2) ...
+Setting up libkrb5-26-heimdal:amd64 (7.7.0+dfsg-2) ...
+Setting up libheimntlm0-heimdal:amd64 (7.7.0+dfsg-2) ...
+Setting up liberror-perl (0.17029-1) ...
+Setting up gnustep-base-runtime (1.27.0-3build3) ...
+Setting up libgssapi3-heimdal:amd64 (7.7.0+dfsg-2) ...
+Setting up sox (14.4.2+git20190427-2) ...
+Setting up unar (1.10.1-2build9) ...
+Setting up libldap-2.4-2:amd64 (2.4.57+dfsg-2ubuntu1) ...
+Setting up libcurl3-gnutls:amd64 (7.74.0-1ubuntu2.3) ...
+Setting up git (1:2.30.2-1ubuntu1) ...
+Setting up libcurl4:amd64 (7.74.0-1ubuntu2.3) ...
+Setting up curl (7.74.0-1ubuntu2.3) ...
+Processing triggers for libc-bin (2.33-0ubuntu5) ...
+Processing triggers for ca-certificates (20210119ubuntu0.21.04.1) ...
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Removing intermediate container f9985ae8d79a
+ ---> 8eb9b33d1a08
+Step 7/11 : WORKDIR /tmp
+ ---> Running in 36fbd4810789
+Removing intermediate container 36fbd4810789
+ ---> 374845846e78
+Step 8/11 : RUN git clone --depth 1 https://github.com/eggplants/yomiage_openjt
+ ---> Running in eacde46fd915
+[91mCloning into 'yomiage_openjt'...
+[0mRemoving intermediate container eacde46fd915
+ ---> d70082f5500d
+Step 9/11 : WORKDIR /tmp/yomiage_openjt
+ ---> Running in 4ea429735e9e
+Removing intermediate container 4ea429735e9e
+ ---> ddfddef78e4f
+Step 10/11 : RUN ./src/prepare_openjt.sh     && ./src/down/_akihito.sh
+ ---> Running in a9a58d015f06
+[91m
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+[0mReading package lists...
+Building dependency tree...
+Reading state information...
+open-jtalk-mecab-naist-jdic is already the newest version (1.11-1.1).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+[91m--2021-10-02 12:06:51--  http://sourceforge.net/projects/mmdagent/files/MMDAgent_Example/MMDAgent_Example-1.8/MMDAgent_Example-1.8.zip
+[0m[91mResolving sourceforge.net (sourceforge.net)... [0m[91m204.68.111.105
+Connecting to sourceforge.net (sourceforge.net)|204.68.111.105|:80... [0m[91mconnected.
+HTTP request sent, awaiting response... [0m[91m301 Moved Permanently
+Location: https://sourceforge.net/projects/mmdagent/files/MMDAgent_Example/MMDAgent_Example-1.8/MMDAgent_Example-1.8.zip [following]
+--2021-10-02 12:06:52--  https://sourceforge.net/projects/mmdagent/files/MMDAgent_Example/MMDAgent_Example-1.8/MMDAgent_Example-1.8.zip
+Connecting to sourceforge.net (sourceforge.net)|204.68.111.105|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m301 Moved Permanently
+Location: https://sourceforge.net/projects/mmdagent/files/MMDAgent_Example/MMDAgent_Example-1.8/MMDAgent_Example-1.8.zip/ [following]
+--2021-10-02 12:06:52--  https://sourceforge.net/projects/mmdagent/files/MMDAgent_Example/MMDAgent_Example-1.8/MMDAgent_Example-1.8.zip/
+[0m[91mReusing existing connection to sourceforge.net:443.
+HTTP request sent, awaiting response... [0m[91m302 Found
+Location: https://sourceforge.net/projects/mmdagent/files/MMDAgent_Example/MMDAgent_Example-1.8/MMDAgent_Example-1.8.zip/download [following]
+--2021-10-02 12:06:53--  https://sourceforge.net/projects/mmdagent/files/MMDAgent_Example/MMDAgent_Example-1.8/MMDAgent_Example-1.8.zip/download
+[0m[91mReusing existing connection to sourceforge.net:443.
+HTTP request sent, awaiting response... [0m[91m302 Found
+Location: https://downloads.sourceforge.net/project/mmdagent/MMDAgent_Example/MMDAgent_Example-1.8/MMDAgent_Example-1.8.zip?ts=gAAAAABhV8zN6ZeJ12Dhxxa_K8OHYup_LzXUts2gGBSVub-4VsWyT_3QkqJ3b6uwHUfFcjQeRlomQhUkXg0_iavEObIPASHG7Q%3D%3D&use_mirror=jaist&r= [following]
+--2021-10-02 12:06:53--  https://downloads.sourceforge.net/project/mmdagent/MMDAgent_Example/MMDAgent_Example-1.8/MMDAgent_Example-1.8.zip?ts=gAAAAABhV8zN6ZeJ12Dhxxa_K8OHYup_LzXUts2gGBSVub-4VsWyT_3QkqJ3b6uwHUfFcjQeRlomQhUkXg0_iavEObIPASHG7Q%3D%3D&use_mirror=jaist&r=
+Resolving downloads.sourceforge.net (downloads.sourceforge.net)... [0m[91m204.68.111.105
+Connecting to downloads.sourceforge.net (downloads.sourceforge.net)|204.68.111.105|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m302 Found
+Location: https://jaist.dl.sourceforge.net/project/mmdagent/MMDAgent_Example/MMDAgent_Example-1.8/MMDAgent_Example-1.8.zip [following]
+--2021-10-02 12:06:54--  https://jaist.dl.sourceforge.net/project/mmdagent/MMDAgent_Example/MMDAgent_Example-1.8/MMDAgent_Example-1.8.zip
+Resolving jaist.dl.sourceforge.net (jaist.dl.sourceforge.net)... [0m[91m150.65.7.130
+Connecting to jaist.dl.sourceforge.net (jaist.dl.sourceforge.net)|150.65.7.130|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m200 OK
+[0m[91mLength: 30293611 (29M) [application/octet-stream]
+[0m[91mSaving to: 'MMDAgent_Example-1.8.zip'
+[0m[91m
+     0K .......... ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m..  0% 1.04M 28s
+    50K .......... ....[0m[91m...... ..........[0m[91m [0m[91m.......... ......[0m[91m....  0% 1.98M 21s
+   100K .......... ..[0m[91m........[0m[91m ........[0m[91m.. .......... ....[0m[91m......  0% 2.37M 18s
+   150K ..........[0m[91m .......... ......[0m[91m.... .......... ..[0m[91m........  0% 2.19M 17s
+   200K .......[0m[91m.[0m[91m.. .......[0m[91m... ....[0m[91m...... ..........[0m[91m ..........  0% 25.1M 14s
+   250K ......[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. ..........  1% 2.57M 13s
+   300K ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... ..........  1% 7.97M 12s
+   350K ..[0m[91m........ ........[0m[91m.. ....[0m[91m...... ....[0m[91m...... ..........  1% 5.06M 11s[0m[91m
+   400K ........[0m[91m.. .......... .......... ..[0m[91m........ ..........  1% 4.58M 10s
+   450K .......... ....[0m[91m...... ..........[0m[91m .......... ..........  1% 7.11M 10s
+   500K .......... ..[0m[91m........ ........[0m[91m.. ......[0m[91m.... ....[0m[91m......  1% 7.18M 9s
+   550K ..........[0m[91m .......... ......[0m[91m..[0m[91m.. .......... ..[0m[91m........  2% 6.11M 9s
+   600K ........[0m[91m.. .......... ....[0m[91m.[0m[91m..... .......... ..........  2% 4.54M 9s
+   650K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. ..........  2%  549K 12s
+   700K .......... ..........[0m[91m .......... .......... ..........  2% 38.8M 11s
+   750K ..[0m[91m........ ........[0m[91m.. .......... .......... ..........  2% 9.09M 11s[0m[91m
+   800K .......... .......... .......... ..[0m[91m........ ..........  2% 7.21M 10s
+   850K .......... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m....  3% 2.22M 10s
+   900K .......... ..[0m[91m........ ........[0m[91m.. ..........[0m[91m ..........  3% 6.62M 10s
+   950K ..........[0m[91m ........[0m[91m.. .......... .......... ..[0m[91m........  3% 23.2M 9s[0m[91m
+  1000K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m ........[0m[91m..  3% 12.1M 9s
+  1050K ......[0m[91m.... .......... ..[0m[91m........ .......... ..........  3% 4.57M 9s
+  1100K ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... ..........  3% 11.3M 9s
+  1150K ..[0m[91m........ ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..........  4% 9.28M 8s[0m[91m
+  1200K .......... ......[0m[91m.... .......... ..[0m[91m........ ...[0m[91m.....[0m[91m..  4% 10.3M 8s
+  1250K ...[0m[91m..[0m[91m.[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m .......... ......[0m[91m....  4% 1.65M 8s
+  1300K ....[0m[91m...... ..[0m[91m........[0m[91m .......... ......[0m[91m.... ....[0m[91m......  4% 25.4M 8s
+  1350K ..........[0m[91m ........[0m[91m.. ......[0m[91m.... .......... ..........  4% 12.2M 8s
+  1400K ........[0m[91m.. .......... ....[0m[91m...... .......... ..........  4% 11.8M 8s
+  1450K ......[0m[91m.... .......... .......... ........[0m[91m.. ..........  5% 20.8M 8s
+  1500K .......... ..........[0m[91m .......... .......... ..........  5% 16.1M 7s
+  1550K ..[0m[91m........ ........[0m[91m.. .......... .......... ..........  5% 1.68M 8s[0m[91m
+  1600K .......... .......... .......... ..[0m[91m........ ..........  5% 7.95M 7s
+  1650K .......... ....[0m[91m...... ..........[0m[91m .......... ..........  5% 23.6M 7s
+  1700K .......... ..[0m[91m........ .......... .......... ....[0m[91m......  5% 20.0M 7s
+  1750K .......... .......... ......[0m[91m.... .......... ..........  6% 29.6M 7s
+  1800K ........[0m[91m.. .......... ....[0m[91m...... .......... ..........  6% 21.7M 7s
+  1850K ......[0m[91m.... .......... ..........[0m[91m .......... ..........  6% 15.4M 7s
+  1900K ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... ..........  6% 3.51M 7s
+  1950K .......... ........[0m[91m.. .......... ....[0m[91m...... ..[0m[91m........  6% 4.41M 7s
+  2000K .......... ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m..  6% 9.05M 6s
+  2050K .......... ....[0m[91m.[0m[91m..... ..........[0m[91m .......... ......[0m[91m....  7% 14.9M 6s
+  2100K .......... ..[0m[91m.[0m[91m....... ........[0m[91m.. .......... ....[0m[91m......  7% 11.9M 6s
+  2150K ..........[0m[91m .......... ......[0m[91m.... .......... ..[0m[91m........  7% 5.55M 6s
+  2200K ........[0m[91m.. .......... .......... .......... ..........  7% 9.38M 6s
+  2250K .......... .......... ..[0m[91m........ .......... ..........  7% 11.1M 6s
+  2300K ....[0m[91m...... ..........[0m[91m .......... .......... ..........  7% 9.33M 6s
+  2350K ..[0m[91m........ .......... .......... ....[0m[91m...... ..........  8% 14.3M 6s
+  2400K .......... ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m..  8%  646K 7s
+  2450K .......... .......... ..........[0m[91m .......... ..........  8% 31.5M 6s
+  2500K .....[0m[91m..... .......... .......... .......... ....[0m[91m......  8% 11.4M 6s
+  2550K .......... .......... ......[0m[91m.... ....[0m[91m...... ..[0m[91m........  8% 6.95M 6s
+  2600K .......... .......... ....[0m[91m...... .......... ..........  8% 24.9M 6s
+  2650K ......[0m[91m.... .......... .......... ........[0m[91m.. ..........  9% 18.7M 6s
+  2700K ....[0m[91m...... .......... .......... ......[0m[91m.... ..........  9% 13.6M 6s
+  2750K .......... ........[0m[91m.. .......... .......... ..........  9% 38.0M 6s[0m[91m
+  2800K .......... .......... .......... ..[0m[91m........ ........[0m[91m..  9% 6.51M 6s
+  2850K .......... .......... ..........[0m[91m .......... ......[0m[91m....  9% 2.83M 6s
+  2900K ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. .......... ....[0m[91m......  9% 6.49M 6s
+  2950K ..........[0m[91m .......... .......... .......... ..[0m[91m........ 10% 22.7M 6s
+  3000K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m .......... 10%[0m[91m 14.3M 6s
+  3050K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 10% 7.64M 6s
+  3100K .......... ..........[0m[91m .......... ......[0m[91m.... .......... 10% 11.7M 6s
+  3150K .......... ........[0m[91m.. .......... ....[0m[91m...... .......... 10% 12.7M 6s[0m[91m
+  3200K .......... ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 10% 8.93M 5s
+  3250K .......... ....[0m[91m...... ..........[0m[91m .......... .......... 11% 5.01M 5s
+  3300K .......... ..[0m[91m........ ........[0m[91m.. .......... .......... 11% 21.1M 5s
+  3350K ..[0m[91m........[0m[91m .......... .[0m[91m......... .......... ..[0m[91m........ 11% 18.8M 5s
+  3400K ........[0m[91m.. .......... .......... ..........[0m[91m .........[0m[91m. 11% 2.04M 5s
+  3450K ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ ........[0m[91m.. .......... 11% 15.0M 5s
+  3500K .......... ..........[0m[91m .......... ......[0m[91m.... .......... 11% 30.8M 5s
+  3550K ..[0m[91m........ .......... .......... ....[0m[91m...... .......... 12%  662K 6s[0m[91m
+  3600K .......... .......... .......... .......... .......... 12% 2.16M 6s
+  3650K .......... .......... .......... .......... .......... 12% 94.9M 6s
+  3700K .......... .......... .......... .......... .......... 12%  105M 6s
+  3750K .......... .......... .......... .......... .......... 12% 97.9M 6s
+  3800K .......... .......... .......... .......... .......... 13% 94.3M 5s
+  3850K .......... .......... .......... .......... .......... 13%  105M 5s
+  3900K .......... .......... .......... .......... .......... 13% 99.2M 5s
+  3950K .......... .......... .......... .......... .......... 13% 93.1M 5s
+  4000K .......... .......... .......... .......... .......... 13% 82.8M 5s
+  4050K .......... .......... .......... .......... .......... 13% 97.6M 5s
+  4100K .......... .......... .......... .......... .......... 14% 92.7M 5s
+  4150K .......... .......... ......[0m[91m.... .......... ..[0m[91m........ 14%  601K 5s
+  4200K .[0m[91m.......[0m[91m.. .......... ....[0m[91m...... .......... .......... 14% 11.0M 5s
+  4250K ......[0m[91m.... .......... ..[0m[91m........ .......... .......... 14% 1.84M 5s
+  4300K ....[0m[91m...... ........[0m[91m.. .......... ......[0m[91m.... .......... 14% 16.3M 5s
+  4350K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... .......... 14% 6.79M 5s
+  4400K .......... ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 15% 12.8M 5s
+  4450K .......... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... 15% 2.84M[0m[91m 5s
+  4500K .......... ..[0m[91m........ ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... 15% 14.6M 5s[0m[91m
+  4550K ..........[0m[91m .......... ......[0m[91m.... .......... ..[0m[91m........ 15% 11.5M 5s
+  4600K ........[0m[91m.. .......... ....[0m[91m...... ...[0m[91m.......[0m[91m .......... 15% 11.2M 5s
+  4650K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 15%  340K 6s
+  4700K ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... .......... 16% 90.7M 6s
+  4750K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... .......... 16% 45.0M 6s[0m[91m
+  4800K .......... ......[0m[91m.... .......... ..[0m[91m........ .......... 16% 73.7M 6s
+  4850K .......... .......... .......... .......... .......... 16%  105M 6s
+  4900K .......... .......... .......... .......... .......... 16%  106M 6s
+  4950K .......... .......... .......... .......... ..[0m[91m........ 16% 2.31M 6s
+  5000K .......... .......... .......... .......... .......... 17% 78.1M 6s
+  5050K .......... .......... .......... .......... .......... 17% 94.3M 6s
+  5100K .......... .......... .......... .......... .......... 17%  106M 5s
+  5150K .......... .......... .......... .......... .......... 17%  107M 5s
+  5200K .......... ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ ........[0m[91m.. 17%  755K 6s
+  5250K .......... .......... .......... .......... .......... 17% 74.7M 6s
+  5300K .......... .......... .......... .......... ....[0m[91m...... 18% 1.37M 6s
+  5350K ..[0m[91m........[0m[91m .......... ......[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m 18% 12.8M 6s
+  5400K ........[0m[91m.. .......... ....[0m[91m.[0m[91m.[0m[91m.... .......... .......... 18% 1.87M 6s
+  5450K ......[0m[91m.... ......[0m[91m.... .......... ........[0m[91m.. .......... 18% 8.47M 6s
+  5500K ....[0m[91m...... ..........[0m[91m ........[0m[91m.. ......[0m[91m.... .......... 18% 2.63M 6s[0m[91m
+  5550K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... .......... 18% 5.64M 6s[0m[91m
+  5600K .......... .......... .......... ..[0m[91m........ ........[0m[91m.. 19% 5.14M 6s
+  5650K ......[0m[91m.... ....[0m[91m...... ..........[0m[91m .......... .......... 19%  539K 6s
+  5700K .......... ..[0m[91m........ .......... .......... ....[0m[91m...... 19% 10.2M 6s
+  5750K .......... .......... ......[0m[91m.... .......... ..[0m[91m........ 19% 18.3M 6s
+  5800K .......... .......... ....[0m[91m...... .......... .......... 19% 38.5M 6s
+  5850K ......[0m[91m.... .......... .......... ........[0m[91m.. .......... 19% 23.9M 6s
+  5900K .......... ..........[0m[91m .......... ......[0m[91m.... .......... 20% 12.9M 6s
+  5950K .......... ........[0m[91m.. .......... .......... .......... 20% 19.3M 6s[0m[91m
+  6000K .......... .......... .......... ..[0m[91m........ ........[0m[91m.. 20% 8.38M 6s
+  6050K .......... .......... ..........[0m[91m .......... .......... 20% 25.3M 6s
+  6100K .......... ..[0m[91m........ .......... .......... ....[0m[91m...... 20% 2.83M 6s
+  6150K[0m[91m ..........[0m[91m .......... .......... .......... .......... 20% 30.8M 6s
+  6200K ........[0m[91m.. .......... .......... ..........[0m[91m .......... 21%  827K 6s
+  6250K ......[0m[91m.... ....[0m[91m...... .......... ........[0m[91m.. .......... 21% 11.3M 6s
+  6300K ....[0m[91m...... ..........[0m[91m .......... .......... .......... 21% 8.68M 6s
+  6350K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... ..[0m[91m........ 21% 18.3M 6s[0m[91m
+  6400K .......... .......... .......... ..[0m[91m........ .......... 21% 17.0M 6s
+  6450K .......... ....[0m[91m...... .......... .......... ......[0m[91m.... 21% 21.5M 5s
+  6500K .......... ..[0m[91m........ .......... ......[0m[91m.... ....[0m[91m...... 22% 10.3M 5s
+  6550K .......... .......... ......[0m[91m.... ....[0m[91m...... .......... 22% 12.0M 5s
+  6600K ........[0m[91m.. ......[0m[91m.... .......... ..........[0m[91m .......... 22% 23.9M 5s
+  6650K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 22% 7.25M 5s
+  6700K .......... ..........[0m[91m .......... .......... ....[0m[91m...... 22% 37.4M 5s
+  6750K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... .......... 22% 13.7M 5s[0m[91m
+  6800K ........[0m[91m.. ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 23% 11.8M 5s
+  6850K .......... ....[0m[91m...... ..........[0m[91m .......... .......... 23%[0m[91m 15.9M 5s
+  6900K ....[0m[91m...... ..[0m[91m........ ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... 23% 16.9M 5s[0m[91m
+  6950K ..........[0m[91m ........[0m[91m.. ...[0m[91m...[0m[91m.... .......... ..[0m[91m........ 23% 22.6M 5s
+  7000K .......... .......... ....[0m[91m...... .......... ........[0m[91m.. 23% 31.2M 5s
+  7050K ......[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. .......... 23%[0m[91m 23.4M 5s
+  7100K ....[0m[91m...... ..[0m[91m........[0m[91m .......... ......[0m[91m.... .......... 24% 3.26M 5s
+  7150K[0m[91m ..[0m[91m........ ........[0m[91m.. .......... .......... .......... 24% 21.9M 5s[0m[91m
+  7200K .......... ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 24% 6.25M 5s
+  7250K .......... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... 24% 26.5M 5s
+  7300K .......... ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... 24% 11.5M 5s
+  7350K ..........[0m[91m .......... ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ 25% 12.4M 5s[0m[91m
+  7400K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m .......... 25% 13.0M 5s
+  7450K ......[0m[91m.... .......... .......... ........[0m[91m.. .......... 25% 7.27M 5s
+  7500K ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... .......... 25% 10.4M 5s
+  7550K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... .......... 25% 9.05M 5s[0m[91m
+  7600K .......... ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 25% 18.2M 5s
+  7650K .......... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... 26% 12.6M 5s
+  7700K .......... ..[0m[91m........ ........[0m[91m.. .......... .......... 26% 7.85M 5s
+  7750K ..........[0m[91m .......... ......[0m[91m.... .......... ..[0m[91m........ 26% 8.12M 5s[0m[91m
+  7800K ........[0m[91m.. .......... ....[0m[91m.[0m[91m..... ..[0m[91m........[0m[91m ........[0m[91m.. 26% 26.5M 5s
+  7850K .[0m[91m.....[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 26% 8.09M 5s
+  7900K ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... ..........[0m[91m 26% 28.4M 5s
+  7950K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... .......... 27% 8.55M 5s
+  8000K .......... ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 27% 8.67M 4s
+  8050K ......[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... 27% 21.0M 4s
+  8100K ....[0m[91m...... ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... 27% 9.76M 4s
+  8150K ..........[0m[91m .......... ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ 27% 15.9M 4s[0m[91m
+  8200K ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. 27% 10.8M 4s
+  8250K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. ......[0m[91m.... 28% 12.5M 4s
+  8300K ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... .......... 28% 4.04M 4s
+  8350K .......... ........[0m[91m.. .......... ....[0m[91m...... .......... 28% 5.41M 4s[0m[91m
+  8400K .......... ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ ........[0m[91m.. 28% 10.9M 4s
+  8450K ......[0m[91m.... ...[0m[91m.[0m[91m...... ..........[0m[91m .......... ......[0m[91m....[0m[91m 28%[0m[91m 6.72M 4s
+  8500K ....[0m[91m...... ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... 28% 11.3M 4s
+  8550K ..........[0m[91m .......... ......[0m[91m.... .......... ..[0m[91m........ 29% 19.2M 4s
+  8600K ........[0m[91m.. .......... ....[0m[91m...... ..[0m[91m........[0m[91m .......... 29%[0m[91m 15.1M 4s
+  8650K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 29% 9.77M 4s
+  8700K ....[0m[91m...... ..[0m[91m........[0m[91m .......... ......[0m[91m.... .......... 29% 6.21M 4s
+  8750K .......... ........[0m[91m.. .......... ....[0m[91m...... .......... 29% 27.6M 4s[0m[91m
+  8800K .......... .......... .......... ..[0m[91m........ ........[0m[91m.. 29% 10.9M 4s
+  8850K .......... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... 30% 6.06M 4s
+  8900K .......... ..........[0m[91m ........[0m[91m.. .......... ....[0m[91m...... 30% 2.72M 4s
+  8950K ..........[0m[91m .......... ......[0m[91m.... .......... .......... 30% 9.81M 4s
+  9000K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m .......... 30% 1.36M 4s
+  9050K .......... .......... .......... .......... .......... 30% 62.7M 4s
+  9100K .......... .......... .......... .......... .......... 30% 81.1M 4s
+  9150K .......... .......... .......... .......... .......... 31% 82.8M 4s
+  9200K .......... .......... .......... .......... .......... 31% 47.4M 4s
+  9250K .......... .......... .......... .......... .......... 31% 66.9M 4s
+  9300K .......... .......... .......... .......... .......... 31% 65.9M 4s
+  9350K .......... .......... ......[0m[91m.... .......... ..[0m[91m........ 31% 1.11M 4s
+  9400K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m .......... 31%  849K 4s
+  9450K ...[0m[91m...[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 32% 2.07M 4s
+  9500K ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... .......... 32% 1.67M 4s
+  9550K ..[0m[91m........ ....[0m[91m....[0m[91m.. .......... ....[0m[91m...... .......... 32% 76.4M 4s[0m[91m
+  9600K ........[0m[91m.. ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 32% 66.1M 4s
+  9650K ......[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m .......... ......[0m[91m.... 32% 73.5M 4s
+  9700K .......... ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... 32% 1.78M 4s
+  9750K ..[0m[91m........ .......... ......[0m[91m.... .......... ..[0m[91m........ 33% 5.10M 4s
+  9800K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m .......... 33% 8.51M 4s
+  9850K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 33% 7.35M 4s
+  9900K ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... .......... 33% 12.3M 4s
+  9950K ..[0m[91m........ .......... .......... ....[0m[91m...... .......... 33% 19.9M 4s[0m[91m
+ 10000K ........[0m[91m.. ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 33% 7.32M 4s
+ 10050K .......... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... 34% 5.63M 4s
+ 10100K .......... ..[0m[91m........[0m[91m ........[0m[91m.. .......... ....[0m[91m...... 34% 7.03M 4s
+ 10150K ..[0m[91m........ .......... ......[0m[91m.... .......... ..[0m[91m........ 34%[0m[91m 42.3M 4s[0m[91m
+ 10200K ........[0m[91m.. ......[0m[91m.... .......... ..........[0m[91m .......... 34% 6.31M 4s
+ 10250K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. ......[0m[91m....[0m[91m 34% 13.9M 4s[0m[91m
+ 10300K .......... ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... 34% 7.75M 4s
+ 10350K ..[0m[91m........[0m[91m .......... ......[0m[91m.... ....[0m[91m...... .......... 35% 7.99M 4s[0m[91m
+ 10400K .......... ......[0m[91m.... .......[0m[91m... ..[0m[91m........ ........[0m[91m.. 35% 12.1M 4s
+ 10450K .......... ....[0m[91m.[0m[91m..... ..[0m[91m........[0m[91m .......... ......[0m[91m.... 35% 6.26M 4s
+ 10500K .......... ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... 35% 6.61M 4s
+ 10550K ..........[0m[91m .......... .......... .......... ..[0m[91m........ 35% 10.4M 4s
+ 10600K ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m .......... 35% 7.40M 4s
+ 10650K ......[0m[91m.... .......... ..[0m[91m........[0m[91m [0m[91m........[0m[91m.[0m[91m. ......[0m[91m.... 36% 25.0M 4s
+ 10700K ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... .......... 36% 16.7M 4s
+ 10750K ..[0m[91m........ .......... ......[0m[91m.... ....[0m[91m...... .......... 36% 3.85M 4s[0m[91m
+ 10800K ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ ........[0m[91m.. 36% 10.3M 4s
+ 10850K .......... ....[0m[91m...... ..[0m[91m........[0m[91m .......... ......[0m[91m.... 36%[0m[91m 8.52M 4s
+ 10900K .......... ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... 37% 30.5M 4s
+ 10950K ..[0m[91m........[0m[91m .......... ......[0m[91m.[0m[91m... .......... ..[0m[91m........ 37% 16.5M 4s
+ 11000K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m .......... 37% 3.57M 4s
+ 11050K ......[0m[91m.... ..........[0m[91m ..[0m[91m........ ........[0m[91m.. ......[0m[91m.... 37% 32.5M 4s
+ 11100K ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... ....[0m[91m......[0m[91m 37% 7.14M 4s
+ 11150K ..[0m[91m........ ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... .......... 37% 23.2M 4s[0m[91m
+ 11200K .......... ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 38% 12.2M 4s
+ 11250K .......... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... 38% 4.49M 4s
+ 11300K .......... ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... 38% 8.62M 4s
+ 11350K ..........[0m[91m .......... ......[0m[91m.... .......... ..[0m[91m........ 38% 15.2M 4s
+ 11400K ........[0m[91m.. .......... ....[0m[91m.[0m[91m..... .......... .......... 38% 10.5M 3s
+ 11450K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 38% 6.96M 3s
+ 11500K .......... ..........[0m[91m .......... ......[0m[91m.... .......... 39% 13.3M 3s
+ 11550K .......... ........[0m[91m.. .......... .......... ..........[0m[91m 39% 10.4M 3s
+ 11600K .......... ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 39% 8.10M 3s
+ 11650K .......... .......... ..........[0m[91m .......... ......[0m[91m.... 39% 9.36M 3s
+ 11700K .......... ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... 39% 17.4M 3s
+ 11750K ..........[0m[91m .......... ......[0m[91m.... .......... ..[0m[91m........ 39% 4.87M 3s
+ 11800K .......... .......... ....[0m[91m...... ..........[0m[91m .......... 40% 7.66M 3s
+ 11850K .......... .......... ..[0m[91m........ .......... .......... 40% 34.0M 3s
+ 11900K ....[0m[91m...... .......... .......... ......[0m[91m.... .......... 40% 18.5M 3s
+ 11950K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... .......... 40% 8.08M 3s[0m[91m
+ 12000K ........[0m[91m.. ......[0m[91m.[0m[91m... .[0m[91m..[0m[91m.[0m[91m....[0m[91m.. ..[0m[91m....[0m[91m....[0m[91m [0m[91m...[0m[91m.....[0m[91m..[0m[91m 40% 4.91M 3s
+ 12050K ......[0m[91m.... ..[0m[91m..[0m[91m...... ..........[0m[91m .......... .......... 40% 5.16M 3s
+ 12100K .......... ..[0m[91m........ .......... .......... ....[0m[91m...... 41% 9.86M 3s
+ 12150K .......... .......... ......[0m[91m.... .......... ..[0m[91m........ 41% 15.4M 3s
+ 12200K .......... .......... ....[0m[91m...... ..........[0m[91m .......... 41% 5.31M 3s
+ 12250K .......... .......... ..[0m[91m........ .......... .......... 41% 11.9M 3s
+ 12300K .......... ..........[0m[91m .......... ......[0m[91m.... .......... 41% 4.02M 3s
+ 12350K ..[0m[91m........[0m[91m ........[0m[91m.. .......... ....[0m[91m...... .......... 41% 6.17M 3s[0m[91m
+ 12400K ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. 42% 19.1M 3s
+ 12450K ......[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m ......[0m[91m..[0m[91m.. ......[0m[91m.... 42% 15.7M 3s
+ 12500K ....[0m[91m...... ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... 42% 11.0M 3s
+ 12550K ..........[0m[91m .......... ......[0m[91m.... .......... ..[0m[91m.[0m[91m....... 42% 3.11M 3s
+ 12600K ........[0m[91m.. ......[0m[91m.... ....[0m[91m.....[0m[91m. ..[0m[91m........[0m[91m ......[0m[91m..[0m[91m.. 42%[0m[91m 9.95M 3s
+ 12650K ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ ........[0m[91m.. .......... 42% 12.9M 3s
+ 12700K ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... .......... 43% 12.0M 3s
+ 12750K ..[0m[91m........ .......... .......... .......... ..[0m[91m........ 43% 10.6M 3s[0m[91m
+ 12800K .......... ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 43% 3.05M 3s
+ 12850K .......... ....[0m[91m...... ..........[0m[91m .......... .......... 43% 11.1M 3s
+ 12900K .......... ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... 43% 1.18M 3s
+ 12950K .......... .......... .......... .......... ..[0m[91m........ 43% 55.3M 3s
+ 13000K .......... .......... .......... .......... .......... 44% 51.7M 3s
+ 13050K .......... .......... ..[0m[91m........ .......... .......... 44% 63.5M 3s
+ 13100K .......... .......... .......... .......... .......... 44% 60.4M 3s
+ 13150K ..[0m[91m........ .......... .......... ....[0m[91m...... .......... 44% 65.3M 3s[0m[91m
+ 13200K .......... ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 44% 2.73M 3s
+ 13250K ......[0m[91m.... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... 44% 2.82M 3s
+ 13300K .......... ..[0m[91m........ ........[0m[91m.. .......... .......... 45% 7.09M 3s
+ 13350K ..........[0m[91m ........[0m[91m.. ......[0m[91m.... .......... [0m[91m..[0m[91m........ 45% 21.7M 3s
+ 13400K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m ........[0m[91m.. 45% 7.06M 3s
+ 13450K ......[0m[91m.... .......... ..[0m[91m........ .......... .......... 45% 46.8M 3s
+ 13500K ....[0m[91m...... .......... .......... ......[0m[91m.... .......... 45% 13.1M 3s
+ 13550K ..[0m[91m..[0m[91m...... [0m[91m.[0m[91m.......[0m[91m.. .......... ....[0m[91m...... ..[0m[91m........ 45% 5.33M 3s[0m[91m
+ 13600K ........[0m[91m.. ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 46% 12.3M 3s
+ 13650K ......[0m[91m.... ....[0m[91m.[0m[91m..... ...[0m[91m.......[0m[91m .......... ......[0m[91m.... 46% 3.90M 3s
+ 13700K .......... ..[0m[91m........ ........[0m[91m.. ......[0m[91m.... ....[0m[91m......[0m[91m 46% 9.16M 3s
+ 13750K ..........[0m[91m .......... ......[0m[91m.... .......... ..[0m[91m........ 46% 13.3M 3s
+ 13800K ........[0m[91m.[0m[91m. .......... ....[0m[91m...... ..........[0m[91m ........[0m[91m.. 46% 4.92M 3s
+ 13850K ......[0m[91m.... .......... ..[0m[91m........ .......... .......... 46% 54.6M 3s
+ 13900K ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... .......... 47% 4.43M 3s
+ 13950K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... .......... 47% 5.75M 3s[0m[91m
+ 14000K .......... ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 47% 7.43M 3s
+ 14050K .......... [0m[91m....[0m[91m...... ..........[0m[91m ........[0m[91m.. ......[0m[91m.... 47% 4.39M 3s
+ 14100K .......... ..[0m[91m........[0m[91m ........[0m[91m.. .......... ....[0m[91m...... 47% 9.74M 3s
+ 14150K ..[0m[91m........[0m[91m [0m[91m........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ 47%[0m[91m 12.0M 3s
+ 14200K ........[0m[91m.. ......[0m[91m.... .......... ..........[0m[91m [0m[91m.......... 48% 3.19M 3s
+ 14250K .....[0m[91m.[0m[91m.... ....[0m[91m...[0m[91m... ..[0m[91m....[0m[91m....[0m[91m ........[0m[91m.. ......[0m[91m.... 48% 18.2M 3s[0m[91m
+ 14300K ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... 48% 3.71M 3s
+ 14350K ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ 48% 3.96M 3s[0m[91m
+ 14400K ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. 48% 14.3M 3s
+ 14450K ..[0m[91m........ .......... ..........[0m[91m ........[0m[91m.. ......[0m[91m.... 49%[0m[91m 3.66M 3s
+ 14500K .......... ..[0m[91m........[0m[91m ........[0m[91m.. ....[0m[91m..[0m[91m.... ....[0m[91m...... 49%[0m[91m 10.7M 3s
+ 14550K ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... .......... ..[0m[91m.[0m[91m....... 49% 7.93M 3s[0m[91m
+ 14600K .......... .......... .......... ..........[0m[91m .......... 49% 8.51M 3s
+ 14650K ...[0m[91m...[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. ......[0m[91m.... 49% 4.13M[0m[91m 3s
+ 14700K ....[0m[91m...... ..[0m[91m........[0m[91m .......... ......[0m[91m.... ........[0m[91m.. 49% 15.0M 3s
+ 14750K ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ 50%[0m[91m 11.6M 3s[0m[91m
+ 14800K ........[0m[91m.. .....[0m[91m.[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. 50% 9.17M 3s
+ 14850K ......[0m[91m.... ....[0m[91m...... .......[0m[91m...[0m[91m .......... ......[0m[91m.... 50% 6.45M 3s
+ 14900K .......... ..[0m[91m........ ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... 50% 14.5M 3s
+ 14950K ..........[0m[91m ........[0m[91m.. ......[0m[91m.... .......... ..[0m[91m........ 50% 1.52M 3s
+ 15000K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m .......... 50% 11.4M 3s
+ 15050K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. ......[0m[91m....[0m[91m 51% 4.79M 3s
+ 15100K ....[0m[91m...... ..[0m[91m........[0m[91m .......... ......[0m[91m.... ....[0m[91m...... 51% 29.0M 3s
+ 15150K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... .......... 51% 17.2M 3s[0m[91m
+ 15200K .......... ....[0m[91m..[0m[91m.... .......... ..[0m[91m...[0m[91m..... ........[0m[91m.. 51% 2.69M 3s
+ 15250K .......... .......... ..........[0m[91m .......... ......[0m[91m.... 51% 3.64M 3s
+ 15300K .......... ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... 51% 5.82M 3s
+ 15350K ....[0m[91m......[0m[91m .......... ......[0m[91m.... .......... ..[0m[91m........ 52% 6.59M 3s[0m[91m
+ 15400K ........[0m[91m.. .......... ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. 52% 27.6M 3s
+ 15450K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 52% 14.4M 3s
+ 15500K[0m[91m ....[0m[91m...... ..[0m[91m........[0m[91m .......... ......[0m[91m.... ..........[0m[91m 52% 5.66M 3s
+ 15550K ..[0m[91m........[0m[91m ........[0m[91m.. .......... ....[0m[91m...... .......... 52% 5.25M 3s[0m[91m
+ 15600K .......... ......[0m[91m.... .......... ..[0m[91m........[0m[91m ........[0m[91m.. 52% 8.68M 3s
+ 15650K .......... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... 53% 7.26M 2s
+ 15700K .......... ..[0m[91m........ .......... .......... ....[0m[91m...... 53% 34.5M 2s
+ 15750K ..[0m[91m........[0m[91m .......... ......[0m[91m.... .......... .......... 53% 3.05M 2s[0m[91m
+ 15800K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m .......... 53% 11.8M 2s
+ 15850K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. ..........[0m[91m 53% 11.2M 2s
+ 15900K ....[0m[91m...... .......... ........[0m[91m.. ......[0m[91m.... ........[0m[91m.. 53% 12.0M 2s
+ 15950K ..[0m[91m........ ...[0m[91m.....[0m[91m.. .......... ....[0m[91m...... .......... 54% 8.19M 2s[0m[91m
+ 16000K .......... ......[0m[91m.... .......... ..[0m[91m........[0m[91m ........[0m[91m.. 54% 3.12M 2s
+ 16050K ......[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m .......... ......[0m[91m.... 54% 8.82M 2s
+ 16100K ....[0m[91m...... ..[0m[91m........ ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... 54% 13.3M 2s
+ 16150K ..........[0m[91m ........[0m[91m.. ......[0m[91m.... .......... ..[0m[91m........ 54% 5.64M 2s[0m[91m
+ 16200K ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..........[0m[91m .......... 54%[0m[91m 7.27M 2s
+ 16250K[0m[91m ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 55% 5.14M 2s
+ 16300K ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... ..........[0m[91m 55% 10.2M 2s
+ 16350K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... ..[0m[91m........ 55% 11.3M 2s[0m[91m
+ 16400K .......... ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 55% 6.65M 2s
+ 16450K .......... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... 55% 26.7M 2s
+ 16500K .......... ..[0m[91m........[0m[91m ........[0m[91m.. .......... ....[0m[91m...... 55% 6.32M 2s
+ 16550K ..[0m[91m........[0m[91m .......... ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ 56% 4.51M 2s
+ 16600K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m .......... 56% 3.18M 2s
+ 16650K ....[0m[91m..[0m[91m.... .......... ..[0m[91m........[0m[91m ........[0m[91m.. .[0m[91m......... 56% 22.8M 2s
+ 16700K ...[0m[91m.[0m[91m...... ..[0m[91m........[0m[91m .......... ......[0m[91m.... ....[0m[91m...... 56% 18.9M 2s
+ 16750K ..[0m[91m........[0m[91m ........[0m[91m.. ..........[0m[91m ....[0m[91m...... ..[0m[91m........ 56%[0m[91m 11.8M 2s[0m[91m
+ 16800K .......... ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 56% 7.88M 2s
+ 16850K .......... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... 57% 1.97M 2s
+ 16900K .......... ..[0m[91m........ ........[0m[91m.. .......[0m[91m... ....[0m[91m...... 57% 4.81M 2s
+ 16950K .......... ......[0m[91m.... ......[0m[91m.... .......... ..[0m[91m........ 57% 53.8M 2s
+ 17000K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m .......... 57% 19.0M 2s
+ 17050K .......... .......... .......... ........[0m[91m.. ......[0m[91m.... 57%[0m[91m 3.40M 2s
+ 17100K ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... .......... 57% 5.99M 2s
+ 17150K ..........[0m[91m ...[0m[91m.....[0m[91m.. .......... ....[0m[91m...... ..[0m[91m........ 58%[0m[91m 36.4M 2s[0m[91m
+ 17200K .......... ......[0m[91m.... ........[0m[91m.. ..[0m[91m...[0m[91m.....[0m[91m ........[0m[91m.. 58% 12.1M 2s
+ 17250K [0m[91m.......... ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... 58% 11.3M 2s
+ 17300K .......... ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... 58% 16.7M 2s
+ 17350K ..........[0m[91m .......... .......... .......... ..[0m[91m........ 58% 3.19M 2s
+ 17400K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m .......... 58% 11.4M 2s
+ 17450K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 59% 9.35M 2s
+ 17500K .......... ..........[0m[91m .......... ......[0m[91m.... .......... 59% 13.6M 2s
+ 17550K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... ..[0m[91m........ 59% 2.99M 2s[0m[91m
+ 17600K .......... ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 59% 12.4M 2s
+ 17650K .......... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... 59% 5.59M 2s
+ 17700K .......... .......... ........[0m[91m.. .......... ....[0m[91m...... 59% 44.9M 2s
+ 17750K ..[0m[91m........[0m[91m .......... ......[0m[91m.... .......... ..[0m[91m........ 60% 17.0M 2s
+ 17800K ........[0m[91m.. .......... ....[0m[91m...... .......... .......... 60% 2.55M 2s
+ 17850K ....[0m[91m...... .......... .......... ........[0m[91m.. ..........[0m[91m 60% 5.12M 2s
+ 17900K ....[0m[91m...... .[0m[91m........[0m[91m.[0m[91m .......... ......[0m[91m.... .......... 60% 8.67M 2s
+ 17950K ..[0m[91m........ ........[0m[91m.[0m[91m. ..[0m[91m....[0m[91m.... ...[0m[91m.[0m[91m...... ..[0m[91m........ 60%[0m[91m 19.6M 2s[0m[91m
+ 18000K ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m [0m[91m........[0m[91m.. 61% 10.0M 2s
+ 18050K [0m[91m......[0m[91m.... ....[0m[91m...... ..[0m[91m.[0m[91m....[0m[91m...[0m[91m .......... ......[0m[91m.... 61% 6.12M 2s
+ 18100K ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.[0m[91m... ....[0m[91m...... 61% 37.1M 2s
+ 18150K ..[0m[91m.......[0m[91m.[0m[91m ........[0m[91m.. ......[0m[91m.... ..........[0m[91m ..[0m[91m........ 61% 14.6M 2s
+ 18200K ........[0m[91m.. .......... ....[0m[91m...... ..[0m[91m........ .......... 61%[0m[91m 1.06M 2s
+ 18250K ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ ........[0m[91m.. .......... 61% 81.2M 2s
+ 18300K ....[0m[91m...... ..........[0m[91m ........[0m[91m.. ...[0m[91m...[0m[91m.... ..........[0m[91m 62%[0m[91m 11.8M[0m[91m 2s
+ 18350K ..[0m[91m....[0m[91m.... ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ 62%[0m[91m 27.1M 2s[0m[91m
+ 18400K .......... ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 62%[0m[91m 11.4M 2s[0m[91m
+ 18450K ......[0m[91m.... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... 62% 2.31M 2s
+ 18500K ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. .[0m[91m.....[0m[91m.... ....[0m[91m...... 62% 16.7M 2s
+ 18550K ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... .......... ..[0m[91m..[0m[91m...... 62% 31.9M[0m[91m 2s[0m[91m
+ 18600K .[0m[91m.......[0m[91m.. ......[0m[91m.... ....[0m[91m.[0m[91m....[0m[91m. ..[0m[91m........[0m[91m .......... 63%[0m[91m 9.63M 2s
+ 18650K ......[0m[91m.... ........[0m[91m.. ..[0m[91m........ ........[0m[91m.. ......[0m[91m.... 63% 16.9M 2s
+ 18700K ....[0m[91m...... ..........[0m[91m .......... .......... ....[0m[91m...... 63% 6.14M 2s
+ 18750K ..[0m[91m......[0m[91m.. ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m 63% 1.70M 2s[0m[91m
+ 18800K .....[0m[91m...[0m[91m.. ....[0m[91m..[0m[91m.... ....[0m[91m...... ..[0m[91m........ ........[0m[91m.. 63% 7.00M 2s
+ 18850K ......[0m[91m...[0m[91m. ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. [0m[91m......[0m[91m..[0m[91m.. 63% 46.9M 2s
+ 18900K ....[0m[91m...... ..[0m[91m........ ........[0m[91m.. ...[0m[91m....... ....[0m[91m...... 64% 13.8M 2s
+ 18950K ..[0m[91m........[0m[91m .......... ......[0m[91m.[0m[91m... ....[0m[91m.[0m[91m..... ..[0m[91m........ 64% 3.81M 2s[0m[91m
+ 19000K ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m .......... 64% 11.2M 2s
+ 19050K ......[0m[91m.... ....[0m[91m...... .......... ........[0m[91m.. .......... 64% 10.4M 2s
+ 19100K ....[0m[91m...... .......[0m[91m... .......... ......[0m[91m.... .......... 64% 5.56M 2s
+ 19150K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... ..[0m[91m........ 64%[0m[91m 11.4M[0m[91m 2s[0m[91m
+ 19200K .......... ......[0m[91m.... .......... ..[0m[91m........ .......... 65%[0m[91m 7.92M 2s
+ 19250K .......... ....[0m[91m...... .......... .......... .[0m[91m......... 65%[0m[91m 20.4M 2s
+ 19300K ....[0m[91m...... ..[0m[91m........ ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... 65% 9.37M 2s
+ 19350K ..........[0m[91m .......... ......[0m[91m.... .......... ..[0m[91m........ 65% 1.77M 2s
+ 19400K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m .......... 65% 13.0M 2s
+ 19450K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 65% 11.8M 2s
+ 19500K ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... .......... 66% 11.5M 2s
+ 19550K ..[0m[91m........ .......[0m[91m.[0m[91m.. .......... ....[0m[91m...... .......... 66% 5.21M 2s
+ 19600K .......... ......[0m[91m.... .......... .......... ........[0m[91m.. 66% 42.6M 2s
+ 19650K .......... ....[0m[91m...... ..[0m[91m........[0m[91m .......... ..........[0m[91m 66% 2.18M 2s
+ 19700K .......... ..[0m[91m........ ........[0m[91m.. .......[0m[91m... ....[0m[91m...... 66% 12.1M 2s
+ 19750K .......[0m[91m...[0m[91m .......... ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ 66% 6.73M 2s[0m[91m
+ 19800K ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m .......... 67% 34.7M 2s
+ 19850K ......[0m[91m.... .......... ..[0m[91m........[0m[91m ........[0m[91m.. [0m[91m.......... 67% 11.8M 2s[0m[91m
+ 19900K ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... .......... 67% 2.86M 2s
+ 19950K ..[0m[91m........ .......... .......... .......... .......... 67% 5.40M 2s[0m[91m
+ 20000K ........[0m[91m.. ......[0m[91m.... .......... ..........[0m[91m ........[0m[91m.. 67% 6.07M 2s
+ 20050K .......... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... 67% 4.20M 2s
+ 20100K .......... ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... ..[0m[91m..[0m[91m...... 68%[0m[91m 10.1M 2s
+ 20150K ..[0m[91m..[0m[91m......[0m[91m ........[0m[91m.. ......[0m[91m..[0m[91m.. .......... ..[0m[91m........ 68% 9.02M 2s[0m[91m
+ 20200K .[0m[91m.[0m[91m......[0m[91m.[0m[91m.[0m[91m ......[0m[91m.... ....[0m[91m...... ..........[0m[91m .........[0m[91m. 68% 6.38M 2s
+ 20250K ......[0m[91m.... ......[0m[91m.... .......... ........[0m[91m.. .......... 68% 8.84M 2s
+ 20300K ....[0m[91m...... ..........[0m[91m [0m[91m........[0m[91m.. .......... ....[0m[91m...... 68% 30.4M 2s
+ 20350K ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ 68% 3.68M 2s[0m[91m
+ 20400K ........[0m[91m.. ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 69% 7.50M 2s
+ 20450K .......... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... 69% 11.5M 2s
+ 20500K .......... .......... ........[0m[91m.. ..........[0m[91m ....[0m[91m...... 69% 12.5M 2s
+ 20550K ..........[0m[91m .......... ......[0m[91m.... ..........[0m[91m ..[0m[91m........ 69% 3.85M 2s
+ 20600K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m ........[0m[91m.. 69%[0m[91m 9.96M 2s
+ 20650K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 69% 13.0M 2s[0m[91m
+ 20700K ....[0m[91m...... ..........[0m[91m ........[0m[91m.. ......[0m[91m.... .......... 70% 7.65M 2s
+ 20750K ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... .......... 70% 25.9M 2s[0m[91m
+ 20800K .......... ......[0m[91m.[0m[91m... .......... ..[0m[91m........ ........[0m[91m.. 70% 1.70M 2s
+ 20850K ......[0m[91m.... ....[0m[91m...... ..........[0m[91m ..........[0m[91m ......[0m[91m.... 70% 2.08M 2s
+ 20900K ....[0m[91m...... ..[0m[91m........[0m[91m .......... .....[0m[91m.[0m[91m.... ....[0m[91m...... 70%[0m[91m 11.4M 1s
+ 20950K ..........[0m[91m .......... ......[0m[91m.... .......... ..[0m[91m........ 70% 6.49M 1s[0m[91m
+ 21000K .......... .......... ....[0m[91m...... ..........[0m[91m ........[0m[91m.. 71% 44.1M 1s
+ 21050K ......[0m[91m.... ....[0m[91m..[0m[91m.... ..[0m[91m........ ........[0m[91m.. ......[0m[91m.... 71% 6.09M 1s
+ 21100K .......... ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... 71% 3.31M 1s
+ 21150K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... .......... 71% 13.6M 1s[0m[91m
+ 21200K .......... ......[0m[91m.... .......... ..[0m[91m........[0m[91m ........[0m[91m.. 71% 8.67M 1s
+ 21250K ......[0m[91m.... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.[0m[91m... 71% 11.4M 1s
+ 21300K ....[0m[91m...... ..[0m[91m.[0m[91m....... ........[0m[91m.[0m[91m. ......[0m[91m.... ....[0m[91m...... 72% 6.92M 1s
+ 21350K ..[0m[91m..[0m[91m......[0m[91m .......... ......[0m[91m.... .......... ..[0m[91m........ 72% 18.1M 1s
+ 21400K ........[0m[91m.. .......... ....[0m[91m...... ...[0m[91m.......[0m[91m .......... 72% 2.46M 1s
+ 21450K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 72% 1.42M 1s
+ 21500K .......... ..........[0m[91m .......... .......... .......... 72% 65.0M 1s
+ 21550K ..[0m[91m........ .......... .......... ....[0m[91m...... .......... 73% 27.6M 1s[0m[91m
+ 21600K .......... ......[0m[91m.... .......... ..[0m[91m........ .......... 73% 7.71M 1s
+ 21650K .......... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... 73% 2.62M 1s
+ 21700K .......... .......... ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... 73% 15.6M 1s
+ 21750K ..[0m[91m........[0m[91m .......... ......[0m[91m.... .......... ..[0m[91m........ 73% 6.96M 1s[0m[91m
+ 21800K .......... .......... .......... ..........[0m[91m .......... 73% 31.7M 1s
+ 21850K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 74% 11.7M 1s
+ 21900K ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... .......... 74% 8.10M 1s
+ 21950K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... .......... 74% 1.82M 1s[0m[91m
+ 22000K .......... .......... .......... ..........[0m[91m ........[0m[91m.. 74% 5.50M 1s
+ 22050K .......... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... 74% 6.11M 1s
+ 22100K .......... ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... 74% 18.8M 1s
+ 22150K ..........[0m[91m .......... ......[0m[91m.... .......... ..[0m[91m........ 75% 12.2M 1s
+ 22200K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m .......... 75% 11.2M 1s
+ 22250K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 75% 11.8M 1s
+ 22300K ....[0m[91m...... ..........[0m[91m .......... .......... .......... 75% 10.3M 1s
+ 22350K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... .......... 75% 2.53M 1s[0m[91m
+ 22400K .......... ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 75% 2.79M 1s
+ 22450K .......... ....[0m[91m...... ..[0m[91m........[0m[91m .......... ......[0m[91m.... 76% 11.4M 1s
+ 22500K .......... ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... 76% 10.8M 1s
+ 22550K ..........[0m[91m .......... ......[0m[91m.... .......... ..[0m[91m........ 76% 7.84M 1s
+ 22600K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m .......... 76% 3.88M 1s
+ 22650K .......... .......... ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... 76% 14.1M 1s
+ 22700K ....[0m[91m...... ..[0m[91m........[0m[91m .......... ......[0m[91m.... .[0m[91m......... 76%[0m[91m 3.84M 1s
+ 22750K ..[0m[91m........ .[0m[91m......... .......... ....[0m[91m...... .......... 77% 13.8M 1s[0m[91m
+ 22800K .......... ......[0m[91m.... .......... ..[0m[91m........[0m[91m ........[0m[91m.. 77% 8.14M 1s
+ 22850K ......[0m[91m.[0m[91m... .[0m[91m......... ..........[0m[91m .......... ......[0m[91m.... 77%[0m[91m 8.91M 1s
+ 22900K .......... .......... ........[0m[91m.. .......... .......... 77% 3.34M 1s
+ 22950K ..........[0m[91m [0m[91m.......... .......... .......... ..[0m[91m........ 77% 11.0M 1s
+ 23000K .......... .......... ....[0m[91m...... ..........[0m[91m .......... 77% 14.4M 1s
+ 23050K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. ......[0m[91m.... 78% 9.14M 1s
+ 23100K ....[0m[91m...... ..........[0m[91m .......... .......... .......... 78% 5.55M 1s
+ 23150K .......... ........[0m[91m.. .......... .......... .......... 78% 9.89M 1s[0m[91m
+ 23200K .......... ......[0m[91m.... .......... ..[0m[91m........ .......... 78% 2.21M 1s
+ 23250K .......... ....[0m[91m...... .......... .......... .......... 78% 6.34M 1s
+ 23300K .......... ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... 78% 9.11M 1s
+ 23350K ..........[0m[91m .......... ......[0m[91m.... .......... .[0m[91m.[0m[91m........ 79% 2.54M 1s
+ 23400K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m .......... 79% 6.72M 1s
+ 23450K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 79% 18.3M 1s
+ 23500K ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... .......... 79% 4.67M 1s
+ 23550K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... .......... 79% 11.3M 1s[0m[91m
+ 23600K .......... ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 79% 8.13M 1s
+ 23650K .......... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... 80% 9.10M 1s
+ 23700K .......... .......... ........[0m[91m.. .......... ....[0m[91m...... 80% 7.98M 1s
+ 23750K .......... .......... ......[0m[91m.... .......... ..[0m[91m........ 80% 19.7M 1s
+ 23800K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m .......... 80% 1.82M 1s
+ 23850K ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ .......... .......... 80% 5.88M 1s
+ 23900K ....[0m[91m...... .......... .......... ......[0m[91m.... ....[0m[91m...... 80% 28.0M 1s
+ 23950K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... .......... 81% 5.22M 1s[0m[91m
+ 24000K .......... ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 81% 3.07M 1s
+ 24050K .......... ....[0m[91m...... .......... .......... ......[0m[91m.... 81% 2.93M 1s
+ 24100K .......... .......... ........[0m[91m.. .......... ....[0m[91m...... 81% 29.1M 1s
+ 24150K ..........[0m[91m .......... ......[0m[91m.... .......... .......... 81% 30.5M 1s
+ 24200K ........[0m[91m.. .......... ....[0m[91m.[0m[91m..... ..........[0m[91m [0m[91m........[0m[91m.. 81%[0m[91m 10.3M 1s
+ 24250K ......[0m[91m.... .......... .......... ........[0m[91m.. .......... 82% 16.8M 1s
+ 24300K ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... .......... 82% 2.99M 1s
+ 24350K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m.[0m[91m.....[0m[91m [0m[91m..[0m[91m........ 82% 3.97M 1s
+ 24400K .......... ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ .......... 82% 5.97M 1s
+ 24450K .......... ....[0m[91m...... .......... .......... ......[0m[91m.... 82% 24.9M 1s
+ 24500K .......... ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... 82% 3.23M[0m[91m 1s
+ 24550K ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ 83% 5.84M 1s
+ 24600K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m .......... 83%[0m[91m 46.4M 1s
+ 24650K ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ ........[0m[91m.. .......... 83% 12.4M 1s
+ 24700K ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... .......... 83% 9.43M 1s
+ 24750K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... ..[0m[91m........ 83% 2.54M 1s
+ 24800K .......... .......... .......... .......... ........[0m[91m.. 83% 13.2M 1s
+ 24850K ......[0m[91m.... ....[0m[91m.[0m[91m..... [0m[91m..[0m[91m.[0m[91m.......[0m[91m ........[0m[91m.. .....[0m[91m.[0m[91m.... 84% 4.11M 1s
+ 24900K .......... ..[0m[91m........ ........[0m[91m.. .......... .......... 84% 8.32M 1s
+ 24950K .......... .......... ......[0m[91m.... .......... ..[0m[91m........ 84% 11.3M 1s
+ 25000K ........[0m[91m.. .......... ....[0m[91m...... .......... .......... 84% 13.0M 1s
+ 25050K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 84% 3.63M 1s
+ 25100K ....[0m[91m...... ..[0m[91m........[0m[91m .......... ......[0m[91m.... .......... 85% 9.44M 1s
+ 25150K ..[0m[91m........[0m[91m [0m[91m.[0m[91m.[0m[91m........ .......... ....[0m[91m...... ..[0m[91m........ 85% 15.2M 1s[0m[91m
+ 25200K .......... .......... .......... .......... .......... 85% 6.48M 1s
+ 25250K .......... .......... ..........[0m[91m .......... ......[0m[91m.... 85% 23.6M 1s
+ 25300K .......... ..[0m[91m........ .......... .......... ....[0m[91m...... 85% 3.03M 1s
+ 25350K ..........[0m[91m .......... ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ 85% 11.3M 1s[0m[91m
+ 25400K ..[0m[91m......[0m[91m.. .......... ....[0m[91m...... ..[0m[91m.[0m[91m.......[0m[91m .......... 86% 11.1M 1s
+ 25450K ......[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. .......... 86% 6.88M 1s
+ 25500K .......... .......... .......... ......[0m[91m.... .......... 86% 28.1M 1s
+ 25550K ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... .......... 86% 3.43M 1s[0m[91m
+ 25600K .......... [0m[91m.....[0m[91m.[0m[91m.... ...[0m[91m......[0m[91m. ..[0m[91m........[0m[91m [0m[91m......[0m[91m..[0m[91m.. 86% 9.21M 1s
+ 25650K .......... .......... ..........[0m[91m .......... ......[0m[91m.... 86% 4.20M 1s
+ 25700K .......... ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... 87% 7.39M 1s
+ 25750K ..........[0m[91m .......... .......... .......... ..[0m[91m........ 87% 47.7M 1s
+ 25800K ........[0m[91m.. .......... ....[0m[91m.[0m[91m..... ..[0m[91m........[0m[91m .......... 87% 8.77M 1s
+ 25850K ......[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. .......... 87% 6.89M 1s
+ 25900K ....[0m[91m...... ........[0m[91m.. .......... .......... .......... 87% 2.34M 1s
+ 25950K .......... ........[0m[91m.. .......... .[0m[91m...[0m[91m...... ..[0m[91m........[0m[91m 87% 3.14M 1s[0m[91m
+ 26000K ........[0m[91m.. ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 88% 9.36M 1s
+ 26050K ......[0m[91m.... ....[0m[91m...... ..[0m[91m.[0m[91m.[0m[91m......[0m[91m ........[0m[91m.. ......[0m[91m.... 88% 11.2M 1s
+ 26100K .......... ..[0m[91m.[0m[91m.......[0m[91m [0m[91m.......... .......... ....[0m[91m...... 88% 9.88M 1s
+ 26150K ..........[0m[91m ........[0m[91m.. ......[0m[91m.... .......... .......... 88% 7.25M 1s
+ 26200K ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..........[0m[91m .......... 88% 4.65M 1s
+ 26250K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 88% 9.31M 1s
+ 26300K ....[0m[91m...... .......... .......... ......[0m[91m.... ..........[0m[91m 89% 10.3M 1s
+ 26350K .......... ........[0m[91m.. .......... ....[0m[91m.[0m[91m..... .......... 89% 8.22M 1s[0m[91m
+ 26400K[0m[91m .......... ......[0m[91m.... .......... ..[0m[91m......[0m[91m..[0m[91m ..[0m[91m......[0m[91m.. 89% 18.0M[0m[91m 1s[0m[91m
+ 26450K ......[0m[91m.[0m[91m... ....[0m[91m...... ..[0m[91m........[0m[91m .......... ......[0m[91m.... 89%[0m[91m 3.29M 1s
+ 26500K .......... ..[0m[91m........[0m[91m ........[0m[91m.. .......... ....[0m[91m...... 89% 12.2M 1s
+ 26550K ......[0m[91m..[0m[91m..[0m[91m .......... ......[0m[91m.... .......... ..[0m[91m........ 89% 12.4M 1s[0m[91m
+ 26600K ........[0m[91m.[0m[91m. .....[0m[91m.[0m[91m.... ....[0m[91m...... ..[0m[91m........ .......... 90% 6.01M 0s
+ 26650K .......... ....[0m[91m...... .[0m[91m.[0m[91m...[0m[91m.....[0m[91m ........[0m[91m.. .......... 90% 15.7M 0s
+ 26700K ....[0m[91m...... .......... .......... .......... .......... 90%  984K 0s
+ 26750K .......... .......... .......... .......... .......... 90%  101M 0s
+ 26800K .......... .......... .......... .......... .......... 90% 86.5M 0s
+ 26850K .......... .......... .......... .......... .......... 90%  103M 0s
+ 26900K .......... .......... .......... .......... .......... 91%  105M 0s
+ 26950K .......... .......... .......... .......... ..[0m[91m...[0m[91m..... 91% 2.33M 0s[0m[91m
+ 27000K ........[0m[91m.[0m[91m. .......... .......... ..........[0m[91m .......... 91% 7.68M 0s
+ 27050K .......... .......... ..[0m[91m........[0m[91m ........[0m[91m..[0m[91m [0m[91m.......... 91% 2.27M 0s
+ 27100K ....[0m[91m......[0m[91m ..........[0m[91m [0m[91m........[0m[91m.. .......... .......... 91% 15.2M 0s
+ 27150K ..[0m[91m......[0m[91m..[0m[91m [0m[91m.......... .......... .......... .......... 91% 8.23M 0s
+ 27200K .......... ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ ........[0m[91m.[0m[91m. 92% 11.2M 0s
+ 27250K ......[0m[91m.... ....[0m[91m...... .......... .......... ......[0m[91m.[0m[91m... 92% 10.4M 0s
+ 27300K .......... .......... ........[0m[91m.. [0m[91m.......... ....[0m[91m...... 92% 12.4M 0s
+ 27350K ..........[0m[91m ........[0m[91m.. ......[0m[91m.... .......... ..[0m[91m........ 92% 1.25M 0s
+ 27400K ........[0m[91m.. ......[0m[91m.... ....[0m[91m.[0m[91m..... ..[0m[91m........[0m[91m ......[0m[91m..[0m[91m.. 92% 24.7M 0s
+ 27450K ....[0m[91m..[0m[91m.[0m[91m... .....[0m[91m..... ..[0m[91m........[0m[91m [0m[91m........[0m[91m..[0m[91m ......[0m[91m.[0m[91m... 92% 7.27M 0s
+ 27500K .......... .......... .......... .......... ....[0m[91m...... 93% 26.5M 0s
+ 27550K .......... ........[0m[91m.. ......[0m[91m.... ....[0m[91m.[0m[91m..... ..[0m[91m........ 93% 16.6M 0s[0m[91m
+ 27600K ........[0m[91m.[0m[91m. ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m..[0m[91m 93% 7.50M 0s
+ 27650K .......... .......... ..........[0m[91m .......... ......[0m[91m.... 93% 2.73M 0s
+ 27700K .......... ..[0m[91m........ .......... .......... ....[0m[91m...... 93% 6.74M 0s
+ 27750K .......... .......... .......... .......... ..[0m[91m........ 93% 28.3M 0s
+ 27800K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m .......... 94% 13.1M 0s
+ 27850K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 94% 11.6M 0s
+ 27900K ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... .......... 94% 11.6M 0s
+ 27950K ..[0m[91m........ ........[0m[91m.. .......... .......... .......... 94% 1.82M 0s[0m[91m
+ 28000K ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ ........[0m[91m.. 94% 30.7M 0s
+ 28050K ......[0m[91m.... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... 94% 16.2M 0s
+ 28100K ....[0m[91m...... ..[0m[91m........ ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... 95% 26.5M 0s
+ 28150K ..........[0m[91m .......... ......[0m[91m.... .......... ..[0m[91m........ 95% 12.8M 0s
+ 28200K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m .......... 95% 2.37M 0s
+ 28250K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 95% 11.8M 0s
+ 28300K ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... .......... 95% 10.4M 0s
+ 28350K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... .......... 95% 13.2M 0s[0m[91m
+ 28400K .......... ......[0m[91m.... .......... ..[0m[91m........ .......... 96% 4.57M 0s
+ 28450K .......... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... 96% 12.2M 0s
+ 28500K .......... ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... 96% 8.75M 0s
+ 28550K .......... ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... .......... 96% 7.81M 0s
+ 28600K .......... .......... .......... ..........[0m[91m .......... 96% 2.84M 0s
+ 28650K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 97% 9.78M 0s
+ 28700K ....[0m[91m....[0m[91m.. ..[0m[91m........[0m[91m .......... ......[0m[91m.... .......... 97% 6.99M 0s
+ 28750K ..[0m[91m........[0m[91m ........[0m[91m.. .......... ....[0m[91m...... ..[0m[91m........ 97% 47.3M 0s
+ 28800K ........[0m[91m.. ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 97% 12.4M 0s
+ 28850K ......[0m[91m.... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... 97% 10.1M 0s
+ 28900K .......... ..[0m[91m........ ........[0m[91m.. .......... .......... 97% 3.38M 0s
+ 28950K .......... .......... ......[0m[91m.... .......... ..[0m[91m........ 98% 22.9M 0s[0m[91m
+ 29000K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m .......... 98% 10.1M 0s
+ 29050K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.[0m[91m.[0m[91m ......[0m[91m.... 98% 10.8M 0s
+ 29100K ....[0m[91m...... ..........[0m[91m ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... 98% 13.9M 0s
+ 29150K ..[0m[91m........ ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... .......... 98% 4.10M 0s[0m[91m
+ 29200K .......... ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. 98% 2.22M 0s
+ 29250K .......... ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... 99% 5.14M 0s
+ 29300K .......... ..[0m[91m........[0m[91m ........[0m[91m.[0m[91m. ........[0m[91m.. ....[0m[91m...... 99% 5.52M 0s
+ 29350K ..........[0m[91m .......... ......[0m[91m.... .......... ..[0m[91m........ 99%  125K 0s
+ 29400K ........[0m[91m.. .......... ....[0m[91m...... ...[0m[91m.......[0m[91m .......... 99% 2.33M 0s
+ 29450K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 99% 1.98M 0s
+ 29500K ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... ....[0m[91m...... 99% 2.04M 0s
+ 29550K ..[0m[91m........ ........[0m[91m.. .......... ...                  100% 1.50M=5.5s
+
+2021-10-02 12:06:59 (5.29 MB/s) - 'MMDAgent_Example-1.8.zip' saved [30293611/30293611]
+
+[0mArchive:  MMDAgent_Example-1.8.zip
+   creating: MMDAgent_Example-1.8/
+  inflating: MMDAgent_Example-1.8/MMDAgent_Example.dic  
+  inflating: MMDAgent_Example-1.8/MMDAgent_Example.fph  
+  inflating: MMDAgent_Example-1.8/MMDAgent_Example.fst  
+  inflating: MMDAgent_Example-1.8/MMDAgent_Example.mdf  
+  inflating: MMDAgent_Example-1.8/MMDAgent_Example.ojt  
+  inflating: MMDAgent_Example-1.8/NEWS.txt  
+  inflating: MMDAgent_Example-1.8/README.txt  
+   creating: MMDAgent_Example-1.8/Accessory/
+   creating: MMDAgent_Example-1.8/Accessory/bootscreen/
+  inflating: MMDAgent_Example-1.8/Accessory/bootscreen/bootscreen.pmd  
+  inflating: MMDAgent_Example-1.8/Accessory/bootscreen/bootscreen.png  
+  inflating: MMDAgent_Example-1.8/Accessory/bootscreen/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Accessory/bootscreen/README.txt  
+   creating: MMDAgent_Example-1.8/Accessory/map/
+  inflating: MMDAgent_Example-1.8/Accessory/map/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Accessory/map/map_library.pmd  
+  inflating: MMDAgent_Example-1.8/Accessory/map/map_library.tga  
+  inflating: MMDAgent_Example-1.8/Accessory/map/README.txt  
+   creating: MMDAgent_Example-1.8/Accessory/menu/
+  inflating: MMDAgent_Example-1.8/Accessory/menu/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Accessory/menu/menu.pmd  
+  inflating: MMDAgent_Example-1.8/Accessory/menu/menu_01.tga  
+  inflating: MMDAgent_Example-1.8/Accessory/menu/menu_02.tga  
+  inflating: MMDAgent_Example-1.8/Accessory/menu/menu_03.tga  
+  inflating: MMDAgent_Example-1.8/Accessory/menu/menu_04.tga  
+  inflating: MMDAgent_Example-1.8/Accessory/menu/menu_05.tga  
+  inflating: MMDAgent_Example-1.8/Accessory/menu/menu_06.tga  
+  inflating: MMDAgent_Example-1.8/Accessory/menu/menu_07.tga  
+  inflating: MMDAgent_Example-1.8/Accessory/menu/README.txt  
+   creating: MMDAgent_Example-1.8/Expression/
+   creating: MMDAgent_Example-1.8/Expression/mei_anger/
+  inflating: MMDAgent_Example-1.8/Expression/mei_anger/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Expression/mei_anger/mei_anger.vmd  
+  inflating: MMDAgent_Example-1.8/Expression/mei_anger/README.txt  
+   creating: MMDAgent_Example-1.8/Expression/mei_bashfulness/
+  inflating: MMDAgent_Example-1.8/Expression/mei_bashfulness/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Expression/mei_bashfulness/mei_bashfulness.vmd  
+  inflating: MMDAgent_Example-1.8/Expression/mei_bashfulness/README.txt  
+   creating: MMDAgent_Example-1.8/Expression/mei_happiness/
+  inflating: MMDAgent_Example-1.8/Expression/mei_happiness/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Expression/mei_happiness/mei_happiness.vmd  
+  inflating: MMDAgent_Example-1.8/Expression/mei_happiness/README.txt  
+   creating: MMDAgent_Example-1.8/Expression/mei_listen/
+  inflating: MMDAgent_Example-1.8/Expression/mei_listen/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Expression/mei_listen/mei_listen.vmd  
+  inflating: MMDAgent_Example-1.8/Expression/mei_listen/README.txt  
+   creating: MMDAgent_Example-1.8/Expression/mei_sadness/
+  inflating: MMDAgent_Example-1.8/Expression/mei_sadness/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Expression/mei_sadness/mei_sadness.vmd  
+  inflating: MMDAgent_Example-1.8/Expression/mei_sadness/README.txt  
+   creating: MMDAgent_Example-1.8/Expression/sd_mei_anger/
+  inflating: MMDAgent_Example-1.8/Expression/sd_mei_anger/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Expression/sd_mei_anger/README.txt  
+  inflating: MMDAgent_Example-1.8/Expression/sd_mei_anger/sd_mei_anger.vmd  
+   creating: MMDAgent_Example-1.8/Expression/sd_mei_bashfulness/
+  inflating: MMDAgent_Example-1.8/Expression/sd_mei_bashfulness/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Expression/sd_mei_bashfulness/README.txt  
+  inflating: MMDAgent_Example-1.8/Expression/sd_mei_bashfulness/sd_mei_bashfulness.vmd  
+   creating: MMDAgent_Example-1.8/Expression/sd_mei_confusion/
+  inflating: MMDAgent_Example-1.8/Expression/sd_mei_confusion/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Expression/sd_mei_confusion/README.txt  
+  inflating: MMDAgent_Example-1.8/Expression/sd_mei_confusion/sd_mei_confusion.vmd  
+   creating: MMDAgent_Example-1.8/Expression/sd_mei_happiness/
+  inflating: MMDAgent_Example-1.8/Expression/sd_mei_happiness/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Expression/sd_mei_happiness/README.txt  
+  inflating: MMDAgent_Example-1.8/Expression/sd_mei_happiness/sd_mei_happiness.vmd  
+   creating: MMDAgent_Example-1.8/Expression/sd_mei_sadness/
+  inflating: MMDAgent_Example-1.8/Expression/sd_mei_sadness/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Expression/sd_mei_sadness/README.txt  
+  inflating: MMDAgent_Example-1.8/Expression/sd_mei_sadness/sd_mei_sadness.vmd  
+   creating: MMDAgent_Example-1.8/Model/
+   creating: MMDAgent_Example-1.8/Model/mei/
+  inflating: MMDAgent_Example-1.8/Model/mei/blouse_arm.png  
+  inflating: MMDAgent_Example-1.8/Model/mei/blouse_ribbon.png  
+  inflating: MMDAgent_Example-1.8/Model/mei/cheek.png  
+  inflating: MMDAgent_Example-1.8/Model/mei/COPYRIGHT.txt  
+ extracting: MMDAgent_Example-1.8/Model/mei/eye.png  
+  inflating: MMDAgent_Example-1.8/Model/mei/face.png  
+ extracting: MMDAgent_Example-1.8/Model/mei/hair01.png  
+ extracting: MMDAgent_Example-1.8/Model/mei/hair02.png  
+ extracting: MMDAgent_Example-1.8/Model/mei/hair03.png  
+ extracting: MMDAgent_Example-1.8/Model/mei/hair04.png  
+  inflating: MMDAgent_Example-1.8/Model/mei/hand.png  
+  inflating: MMDAgent_Example-1.8/Model/mei/leg.png  
+  inflating: MMDAgent_Example-1.8/Model/mei/mei.lip  
+  inflating: MMDAgent_Example-1.8/Model/mei/mei.pmd  
+ extracting: MMDAgent_Example-1.8/Model/mei/neck.png  
+  inflating: MMDAgent_Example-1.8/Model/mei/README.txt  
+  inflating: MMDAgent_Example-1.8/Model/mei/shoes.png  
+  inflating: MMDAgent_Example-1.8/Model/mei/skirt.png  
+  inflating: MMDAgent_Example-1.8/Model/mei/vest.png  
+   creating: MMDAgent_Example-1.8/Model/mei_black_jacket/
+  inflating: MMDAgent_Example-1.8/Model/mei_black_jacket/blouse.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_black_jacket/cheek.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_black_jacket/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Model/mei_black_jacket/corsage.png  
+ extracting: MMDAgent_Example-1.8/Model/mei_black_jacket/eye.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_black_jacket/face.png  
+ extracting: MMDAgent_Example-1.8/Model/mei_black_jacket/hair01.png  
+ extracting: MMDAgent_Example-1.8/Model/mei_black_jacket/hair02.png  
+ extracting: MMDAgent_Example-1.8/Model/mei_black_jacket/hair03.png  
+ extracting: MMDAgent_Example-1.8/Model/mei_black_jacket/hair04.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_black_jacket/hand.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_black_jacket/leg.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_black_jacket/mei_black_jacket.lip  
+  inflating: MMDAgent_Example-1.8/Model/mei_black_jacket/mei_black_jacket.pmd  
+ extracting: MMDAgent_Example-1.8/Model/mei_black_jacket/neck.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_black_jacket/README.txt  
+  inflating: MMDAgent_Example-1.8/Model/mei_black_jacket/shoes.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_black_jacket/skirt.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_black_jacket/suit.png  
+   creating: MMDAgent_Example-1.8/Model/mei_blue_jacket/
+  inflating: MMDAgent_Example-1.8/Model/mei_blue_jacket/blouse.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_blue_jacket/cheek.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_blue_jacket/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Model/mei_blue_jacket/corsage.png  
+ extracting: MMDAgent_Example-1.8/Model/mei_blue_jacket/eye.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_blue_jacket/face.png  
+ extracting: MMDAgent_Example-1.8/Model/mei_blue_jacket/hair01.png  
+ extracting: MMDAgent_Example-1.8/Model/mei_blue_jacket/hair02.png  
+ extracting: MMDAgent_Example-1.8/Model/mei_blue_jacket/hair03.png  
+ extracting: MMDAgent_Example-1.8/Model/mei_blue_jacket/hair04.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_blue_jacket/hand.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_blue_jacket/leg.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_blue_jacket/mei_blue_jacket.lip  
+  inflating: MMDAgent_Example-1.8/Model/mei_blue_jacket/mei_blue_jacket.pmd  
+ extracting: MMDAgent_Example-1.8/Model/mei_blue_jacket/neck.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_blue_jacket/README.txt  
+  inflating: MMDAgent_Example-1.8/Model/mei_blue_jacket/shoes.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_blue_jacket/skirt.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_blue_jacket/suit.png  
+   creating: MMDAgent_Example-1.8/Model/mei_gray_jacket/
+  inflating: MMDAgent_Example-1.8/Model/mei_gray_jacket/blouse.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_gray_jacket/cheek.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_gray_jacket/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Model/mei_gray_jacket/corsage.png  
+ extracting: MMDAgent_Example-1.8/Model/mei_gray_jacket/eye.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_gray_jacket/face.png  
+ extracting: MMDAgent_Example-1.8/Model/mei_gray_jacket/hair01.png  
+ extracting: MMDAgent_Example-1.8/Model/mei_gray_jacket/hair02.png  
+ extracting: MMDAgent_Example-1.8/Model/mei_gray_jacket/hair03.png  
+ extracting: MMDAgent_Example-1.8/Model/mei_gray_jacket/hair04.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_gray_jacket/hand.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_gray_jacket/leg.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_gray_jacket/mei_gray_jacket.lip  
+  inflating: MMDAgent_Example-1.8/Model/mei_gray_jacket/mei_gray_jacket.pmd  
+ extracting: MMDAgent_Example-1.8/Model/mei_gray_jacket/neck.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_gray_jacket/README.txt  
+  inflating: MMDAgent_Example-1.8/Model/mei_gray_jacket/shoes.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_gray_jacket/skirt.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_gray_jacket/suit.png  
+   creating: MMDAgent_Example-1.8/Model/mei_winter_blazer/
+ extracting: MMDAgent_Example-1.8/Model/mei_winter_blazer/arm.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_winter_blazer/blazer.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_winter_blazer/blouse.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_winter_blazer/cheek.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_winter_blazer/COPYRIGHT.txt  
+ extracting: MMDAgent_Example-1.8/Model/mei_winter_blazer/eye.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_winter_blazer/face.png  
+ extracting: MMDAgent_Example-1.8/Model/mei_winter_blazer/hair01.png  
+ extracting: MMDAgent_Example-1.8/Model/mei_winter_blazer/hair02.png  
+ extracting: MMDAgent_Example-1.8/Model/mei_winter_blazer/hair03.png  
+ extracting: MMDAgent_Example-1.8/Model/mei_winter_blazer/hair04.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_winter_blazer/hand.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_winter_blazer/leg.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_winter_blazer/mei_winter_blazer.lip  
+  inflating: MMDAgent_Example-1.8/Model/mei_winter_blazer/mei_winter_blazer.pmd  
+ extracting: MMDAgent_Example-1.8/Model/mei_winter_blazer/neck.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_winter_blazer/README.txt  
+  inflating: MMDAgent_Example-1.8/Model/mei_winter_blazer/shoes.png  
+  inflating: MMDAgent_Example-1.8/Model/mei_winter_blazer/skirt.png  
+   creating: MMDAgent_Example-1.8/Model/sd_mei/
+  inflating: MMDAgent_Example-1.8/Model/sd_mei/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Model/sd_mei/README.txt  
+  inflating: MMDAgent_Example-1.8/Model/sd_mei/sd_mei.pmd  
+  inflating: MMDAgent_Example-1.8/Model/sd_mei/sd_mei.png  
+   creating: MMDAgent_Example-1.8/Model/takumi_parka/
+  inflating: MMDAgent_Example-1.8/Model/takumi_parka/cheek.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_parka/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Model/takumi_parka/eye.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_parka/face.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_parka/hair.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_parka/hand.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_parka/hood.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_parka/neck.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_parka/pants.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_parka/parka.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_parka/shoes.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_parka/takumi_parka.lip  
+  inflating: MMDAgent_Example-1.8/Model/takumi_parka/takumi_parka.pmd  
+   creating: MMDAgent_Example-1.8/Model/takumi_shirt/
+  inflating: MMDAgent_Example-1.8/Model/takumi_shirt/arm.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_shirt/cheek.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_shirt/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Model/takumi_shirt/eye.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_shirt/face.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_shirt/hair.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_shirt/hand.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_shirt/neck.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_shirt/pants.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_shirt/shirt.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_shirt/shoes.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_shirt/takumi_shirt.lip  
+  inflating: MMDAgent_Example-1.8/Model/takumi_shirt/takumi_shirt.pmd  
+   creating: MMDAgent_Example-1.8/Model/takumi_suit/
+  inflating: MMDAgent_Example-1.8/Model/takumi_suit/cheek.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_suit/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Model/takumi_suit/eye.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_suit/face.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_suit/hair.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_suit/hand.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_suit/jacket.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_suit/neck.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_suit/pants.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_suit/shoes.png  
+  inflating: MMDAgent_Example-1.8/Model/takumi_suit/takumi_suit.lip  
+  inflating: MMDAgent_Example-1.8/Model/takumi_suit/takumi_suit.pmd  
+   creating: MMDAgent_Example-1.8/Motion/
+   creating: MMDAgent_Example-1.8/Motion/mei_breath/
+  inflating: MMDAgent_Example-1.8/Motion/mei_breath/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/mei_breath/mei_breath.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_breath/README.txt  
+   creating: MMDAgent_Example-1.8/Motion/mei_bye/
+  inflating: MMDAgent_Example-1.8/Motion/mei_bye/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/mei_bye/mei_bye.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_bye/README.txt  
+   creating: MMDAgent_Example-1.8/Motion/mei_call/
+  inflating: MMDAgent_Example-1.8/Motion/mei_call/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/mei_call/mei_call.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_call/README.txt  
+   creating: MMDAgent_Example-1.8/Motion/mei_flash/
+  inflating: MMDAgent_Example-1.8/Motion/mei_flash/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/mei_flash/mei_flash.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_flash/README.txt  
+   creating: MMDAgent_Example-1.8/Motion/mei_greeting/
+  inflating: MMDAgent_Example-1.8/Motion/mei_greeting/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/mei_greeting/mei_greeting.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_greeting/README.txt  
+   creating: MMDAgent_Example-1.8/Motion/mei_guide/
+  inflating: MMDAgent_Example-1.8/Motion/mei_guide/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/mei_guide/mei_guide_happy.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_guide/mei_guide_normal.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_guide/mei_guide_sad.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_guide/README.txt  
+   creating: MMDAgent_Example-1.8/Motion/mei_guts/
+  inflating: MMDAgent_Example-1.8/Motion/mei_guts/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/mei_guts/mei_guts.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_guts/README.txt  
+   creating: MMDAgent_Example-1.8/Motion/mei_hand_shake/
+  inflating: MMDAgent_Example-1.8/Motion/mei_hand_shake/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/mei_hand_shake/mei_hand_shake.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_hand_shake/README.txt  
+   creating: MMDAgent_Example-1.8/Motion/mei_idle/
+  inflating: MMDAgent_Example-1.8/Motion/mei_idle/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/mei_idle/mei_idle_boredom.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_idle/mei_idle_sleep.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_idle/mei_idle_think.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_idle/mei_idle_touch_clothes.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_idle/mei_idle_yawn.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_idle/README.txt  
+   creating: MMDAgent_Example-1.8/Motion/mei_imagine/
+  inflating: MMDAgent_Example-1.8/Motion/mei_imagine/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/mei_imagine/mei_imagine_forward_normal.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_imagine/mei_imagine_forward_small.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_imagine/mei_imagine_left_normal.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_imagine/mei_imagine_left_small.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_imagine/mei_imagine_right_normal.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_imagine/README.txt  
+   creating: MMDAgent_Example-1.8/Motion/mei_laugh/
+  inflating: MMDAgent_Example-1.8/Motion/mei_laugh/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/mei_laugh/mei_laugh.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_laugh/README.txt  
+   creating: MMDAgent_Example-1.8/Motion/mei_look/
+  inflating: MMDAgent_Example-1.8/Motion/mei_look/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/mei_look/mei_look_down.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_look/README.txt  
+   creating: MMDAgent_Example-1.8/Motion/mei_panel/
+  inflating: MMDAgent_Example-1.8/Motion/mei_panel/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/mei_panel/mei_panel_off.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_panel/mei_panel_on.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_panel/README.txt  
+   creating: MMDAgent_Example-1.8/Motion/mei_point/
+  inflating: MMDAgent_Example-1.8/Motion/mei_point/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/mei_point/mei_point_center_bottom.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_point/mei_point_center_center.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_point/mei_point_center_top.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_point/mei_point_left_bottom.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_point/mei_point_left_center.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_point/mei_point_left_top.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_point/mei_point_right_bottom.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_point/mei_point_right_center.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_point/mei_point_right_top.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_point/README.txt  
+   creating: MMDAgent_Example-1.8/Motion/mei_self_introduction/
+  inflating: MMDAgent_Example-1.8/Motion/mei_self_introduction/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/mei_self_introduction/mei_self_introduction.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_self_introduction/README.txt  
+   creating: MMDAgent_Example-1.8/Motion/mei_surprise/
+  inflating: MMDAgent_Example-1.8/Motion/mei_surprise/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/mei_surprise/mei_surprise_normal.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_surprise/mei_surprise_small.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_surprise/README.txt  
+   creating: MMDAgent_Example-1.8/Motion/mei_wait/
+  inflating: MMDAgent_Example-1.8/Motion/mei_wait/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/mei_wait/mei_wait.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/mei_wait/README.txt  
+   creating: MMDAgent_Example-1.8/Motion/menu_rotation/
+  inflating: MMDAgent_Example-1.8/Motion/menu_rotation/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/menu_rotation/menu_rotation.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/menu_rotation/README.txt  
+   creating: MMDAgent_Example-1.8/Motion/sd_mei_bye/
+  inflating: MMDAgent_Example-1.8/Motion/sd_mei_bye/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/sd_mei_bye/README.txt  
+  inflating: MMDAgent_Example-1.8/Motion/sd_mei_bye/sd_mei_bye.vmd  
+   creating: MMDAgent_Example-1.8/Motion/sd_mei_confusion/
+  inflating: MMDAgent_Example-1.8/Motion/sd_mei_confusion/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/sd_mei_confusion/README.txt  
+  inflating: MMDAgent_Example-1.8/Motion/sd_mei_confusion/sd_mei_confusion.vmd  
+   creating: MMDAgent_Example-1.8/Motion/sd_mei_greeting/
+  inflating: MMDAgent_Example-1.8/Motion/sd_mei_greeting/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/sd_mei_greeting/README.txt  
+  inflating: MMDAgent_Example-1.8/Motion/sd_mei_greeting/sd_mei_greeting.vmd  
+   creating: MMDAgent_Example-1.8/Motion/sd_mei_guide/
+  inflating: MMDAgent_Example-1.8/Motion/sd_mei_guide/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/sd_mei_guide/README.txt  
+  inflating: MMDAgent_Example-1.8/Motion/sd_mei_guide/sd_mei_guide_happy.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/sd_mei_guide/sd_mei_guide_normal.vmd  
+  inflating: MMDAgent_Example-1.8/Motion/sd_mei_guide/sd_mei_guide_sad.vmd  
+   creating: MMDAgent_Example-1.8/Motion/sd_mei_guts/
+  inflating: MMDAgent_Example-1.8/Motion/sd_mei_guts/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/sd_mei_guts/README.txt  
+  inflating: MMDAgent_Example-1.8/Motion/sd_mei_guts/sd_mei_guts.vmd  
+   creating: MMDAgent_Example-1.8/Motion/sd_mei_self_introduction/
+  inflating: MMDAgent_Example-1.8/Motion/sd_mei_self_introduction/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/sd_mei_self_introduction/README.txt  
+  inflating: MMDAgent_Example-1.8/Motion/sd_mei_self_introduction/sd_mei_self_introduction.vmd  
+   creating: MMDAgent_Example-1.8/Motion/sd_mei_wait/
+  inflating: MMDAgent_Example-1.8/Motion/sd_mei_wait/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/sd_mei_wait/README.txt  
+  inflating: MMDAgent_Example-1.8/Motion/sd_mei_wait/sd_mei_wait.vmd  
+   creating: MMDAgent_Example-1.8/Motion/takumi_breath/
+  inflating: MMDAgent_Example-1.8/Motion/takumi_breath/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/takumi_breath/README.txt  
+  inflating: MMDAgent_Example-1.8/Motion/takumi_breath/takumi_breath.vmd  
+   creating: MMDAgent_Example-1.8/Motion/takumi_bye/
+  inflating: MMDAgent_Example-1.8/Motion/takumi_bye/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/takumi_bye/README.txt  
+  inflating: MMDAgent_Example-1.8/Motion/takumi_bye/takumi_bye.vmd  
+   creating: MMDAgent_Example-1.8/Motion/takumi_greeting/
+  inflating: MMDAgent_Example-1.8/Motion/takumi_greeting/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/takumi_greeting/README.txt  
+  inflating: MMDAgent_Example-1.8/Motion/takumi_greeting/takumi_greeting.vmd  
+   creating: MMDAgent_Example-1.8/Motion/takumi_guide/
+  inflating: MMDAgent_Example-1.8/Motion/takumi_guide/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/takumi_guide/README.txt  
+  inflating: MMDAgent_Example-1.8/Motion/takumi_guide/takumi_guide_normal.vmd  
+   creating: MMDAgent_Example-1.8/Motion/takumi_hand_shake/
+  inflating: MMDAgent_Example-1.8/Motion/takumi_hand_shake/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/takumi_hand_shake/README.txt  
+  inflating: MMDAgent_Example-1.8/Motion/takumi_hand_shake/takumi_hand_shake.vmd  
+   creating: MMDAgent_Example-1.8/Motion/takumi_peace/
+  inflating: MMDAgent_Example-1.8/Motion/takumi_peace/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/takumi_peace/README.txt  
+  inflating: MMDAgent_Example-1.8/Motion/takumi_peace/takumi_peace.vmd  
+   creating: MMDAgent_Example-1.8/Motion/takumi_self_introduction/
+  inflating: MMDAgent_Example-1.8/Motion/takumi_self_introduction/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/takumi_self_introduction/README.txt  
+  inflating: MMDAgent_Example-1.8/Motion/takumi_self_introduction/takumi_self_introduction.vmd  
+   creating: MMDAgent_Example-1.8/Motion/takumi_wait/
+  inflating: MMDAgent_Example-1.8/Motion/takumi_wait/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Motion/takumi_wait/README.txt  
+  inflating: MMDAgent_Example-1.8/Motion/takumi_wait/takumi_wait.vmd  
+   creating: MMDAgent_Example-1.8/Stage/
+   creating: MMDAgent_Example-1.8/Stage/building2/
+  inflating: MMDAgent_Example-1.8/Stage/building2/background.bmp  
+  inflating: MMDAgent_Example-1.8/Stage/building2/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Stage/building2/floor.bmp  
+  inflating: MMDAgent_Example-1.8/Stage/building2/README.txt  
+   creating: MMDAgent_Example-1.8/Voice/
+   creating: MMDAgent_Example-1.8/Voice/mei/
+  inflating: MMDAgent_Example-1.8/Voice/mei/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Voice/mei/mei_angry.htsvoice  
+  inflating: MMDAgent_Example-1.8/Voice/mei/mei_bashful.htsvoice  
+  inflating: MMDAgent_Example-1.8/Voice/mei/mei_happy.htsvoice  
+  inflating: MMDAgent_Example-1.8/Voice/mei/mei_normal.htsvoice  
+  inflating: MMDAgent_Example-1.8/Voice/mei/mei_sad.htsvoice  
+  inflating: MMDAgent_Example-1.8/Voice/mei/README.txt  
+   creating: MMDAgent_Example-1.8/Voice/slt/
+  inflating: MMDAgent_Example-1.8/Voice/slt/cmu_us_arctic_slt.htsvoice  
+  inflating: MMDAgent_Example-1.8/Voice/slt/COPYRIGHT.txt  
+   creating: MMDAgent_Example-1.8/Voice/takumi/
+  inflating: MMDAgent_Example-1.8/Voice/takumi/COPYRIGHT.txt  
+  inflating: MMDAgent_Example-1.8/Voice/takumi/README.txt  
+  inflating: MMDAgent_Example-1.8/Voice/takumi/takumi_angry.htsvoice  
+  inflating: MMDAgent_Example-1.8/Voice/takumi/takumi_happy.htsvoice  
+  inflating: MMDAgent_Example-1.8/Voice/takumi/takumi_normal.htsvoice  
+  inflating: MMDAgent_Example-1.8/Voice/takumi/takumi_sad.htsvoice  
+[91mALSA lib confmisc.c:767:(parse_card) cannot find card '0'
+ALSA lib conf.c:4745:(_snd_config_evaluate) function snd_func_card_driver returned error: No such file or directory
+ALSA lib confmisc.c:392:(snd_func_concat) error evaluating strings
+ALSA lib conf.c:4745:(_snd_config_evaluate) function snd_func_concat returned error: No such file or directory
+ALSA lib confmisc.c:1246:(snd_func_refer) error evaluating name
+ALSA lib conf.c:4745:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:5233:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2660:(snd_pcm_open_noupdate) Unknown PCM default
+aplay: main:852: audio open error: No such file or directory
+[0mThe command '/bin/bash -o pipefail -c ./src/prepare_openjt.sh     && ./src/down/_akihito.sh' returned a non-zero code: 1
