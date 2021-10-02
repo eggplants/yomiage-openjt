@@ -18,30 +18,30 @@ chkcmd() {
 }
 
 yomi() {
-    cat - |
-      open_jtalk \
-        -x /var/lib/mecab/dic/open-jtalk/naist-jdic \
-        -m "$1" \
-        -s 48000 \
-        -ow "$TMP/$(uuidgen).wav" -r 0.8
+  cat - |
+    open_jtalk \
+      -x /var/lib/mecab/dic/open-jtalk/naist-jdic \
+      -m "$1" \
+      -s 48000 \
+      -ow "$TMP/$(uuidgen).wav" -r 0.8
 }
 
 usage() {
-  echo "Usage: $0 [-s] [-h] [<file>, def: /dev/stdin] [<actor>, def: 白狐舞]"
+  echo "usage: $0 [-s] [-h] [file, def: /dev/stdin] [actor, def: 白狐舞]"
   exit "${1-0}"
 }
 
 main() {
-  chkcmd open_jtalk aplay uuidgen sox
+  chkcmd open_jtalk aplay uuidgen sox bc
   trap 'kill $$' 1 2 3 15
   local SAVE
-  while getopts "sh" OPT
-  do
+  while getopts "sh" OPT; do
     case "$OPT" in
       s) SAVE="true" ;;
       h) usage ;;
-      *) echo "option '${OPT}' is invalid." >&2 && usage 1
-         ;;
+      *)
+        echo "option '${OPT}' is invalid." >&2 && usage 1
+        ;;
     esac
   done
   shift "$((OPTIND - 1))"
@@ -52,7 +52,7 @@ main() {
   # check given input file
   if [ "$f" = '-' ] || [ "$f" = '/dev/stdin' ]; then
     if ! [ -f "/dev/stdin" ]; then
-      echo "stdin is empty">&2
+      echo "stdin is empty" >&2
       exit 1
     fi
     f="/dev/stdin"
@@ -79,21 +79,22 @@ main() {
     usage 1
   fi
 
-  readonly OUT="audio_${f//\//-}_$(date +%s).wav"
-  readonly TMP="$(mktemp -d)"
+  OUT="audio_${f//\//-}_$(date +%s).wav"
+  TMP="$(mktemp -d)"
+  readonly OUT TMP
   echo "[working in: $TMP]"
   local line_count idx
-  line_count="$(< "$f" wc -l)"
+  line_count="$(wc < "$f" -l)"
   idx=0
   grep -vE "^#" "$f" |
     while read -r line; do
       ((idx++))
       echo -ne "\r[${idx}/${line_count}]"
-      if [[ "$line" =~ *min$ ]]; then
+      if [[ $line =~ .*min$ ]]; then
         local m
         m="${line//min/}"
-        sox -n -r 48000 -c 1 "$TMP/$(uuidgen).wav" trim 0 "$((m*60))"
-      elif [[ -z "$line" ]]; then
+        sox -n -r 48000 -c 1 "$TMP/$(uuidgen).wav" trim 0 "$(bc <<< "${m}*60" | sed 's/^\./0&/')"
+      elif [[ -z $line ]]; then
         sox -n -r 48000 -c 1 "$TMP/$(uuidgen).wav" trim 0 0.3
       else
         echo "$line" | yomi "$hts" 2> /dev/null
@@ -105,7 +106,7 @@ main() {
   ls "$TMP"/*.wav -tr > "$TMP/_list"
   readarray -t arr < "$TMP/_list"
   if sox "${arr[@]}" "$TMP/$OUT"; then
-    if [[ "$SAVE" = "true" ]]; then
+    if [[ $SAVE == "true" ]]; then
       mv "$TMP/$OUT" .
       echo "[created: $OUT]"
       aplay "$OUT"

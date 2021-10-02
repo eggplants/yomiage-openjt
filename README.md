@@ -18,7 +18,7 @@
 
 ```shellsession
 $ grep -r "  chkcmd"|awk '{for(i=3;i<=NF;)print$(i++)}'|sort|uniq|xargs
-aplay apt curl open_jtalk sox unar unzip wget
+aplay apt bc curl open_jtalk sox unar unzip wget
 ```
 
 ## お試し
@@ -28,11 +28,27 @@ aplay apt curl open_jtalk sox unar unzip wget
 ./allvoice_test.sh
 # yahooトップページニュース読み上げ
 ./read_yahoo.sh
-# テキスト読み上げ
-./read.sh - 白狐舞 <<< こんにちは
-./read.sh - 唱地ヨエ <<< おはよう
-# ファイル読み上げ
-./read.sh beginner.txt 白狐舞
+```
+
+## `read.sh`
+
+```shellsession
+$ ./read.sh
+usage: ./read.sh [-s] [-h] [file, def: /dev/stdin] [actor, def: 白狐舞]
+$ ./read.sh - <<< こんにちは
+[input: -, actor: 白狐舞]
+[working in: /tmp/tmp.mF8HdxASHy]
+[1/1]
+再生中 WAVE '/tmp/tmp.mF8HdxASHy/audio_-dev-stdin_1633132546.wav' : Signed 16 bit Little Endian, レート 48000 Hz, モノラル
+$ ./read.sh - 唱地ヨエ <<< おはよう
+[input: -, actor: 唱地ヨエ]
+[working in: /tmp/tmp.F8iJNBfPFB]
+[1/1]
+再生中 WAVE '/tmp/tmp.F8iJNBfPFB/audio_-dev-stdin_1633132575.wav' : Signed 16 bit Little Endian, レート 48000 Hz, モノラル
+$ ./read.sh beginner.txt 白狐舞
+[1/314]
+...
+[314/314]
 # 音声保存
 ./read.sh -s beginner.txt 白狐舞
 ```
