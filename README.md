@@ -46,11 +46,18 @@ $ ./read.sh - 唱地ヨエ <<< おはよう
 [1/1]
 再生中 WAVE '/tmp/tmp.F8iJNBfPFB/audio_-dev-stdin_1633132575.wav' : Signed 16 bit Little Endian, レート 48000 Hz, モノラル
 $ ./read.sh beginner.txt 白狐舞
+[input: beginner.txt, actor: 白狐舞]
+[working in: /tmp/tmp.Oq8IrdWzio]
 [1/314]
 ...
 [314/314]
-# 音声保存
-./read.sh -s beginner.txt 白狐舞
+再生中 WAVE '/tmp/tmp.Oq8IrdWzio/audio_beginner.txt_1633133100.wav' : Signed 16 bit Little Endian, レート 48000 Hz, モノラル
+$ ./read.sh -s beginner.txt 白狐舞
+[input: beginner.txt, actor: 白狐舞]
+[working in: /tmp/tmp.BsFtnzVVNs]
+[314/314]
+[created: audio_beginner.txt_1633133412.wav]
+$
 ```
 
 ## 正規化(正常に読んでもらうためのコツ)
