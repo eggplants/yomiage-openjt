@@ -33,7 +33,7 @@ aplay apt bc curl open_jtalk sox unar unzip wget
 ## `read.sh`
 
 ```shellsession
-$ ./read.sh
+$ ./read.sh -h
 usage: ./read.sh [-s] [-h] [file, def: /dev/stdin] [actor, def: 白狐舞]
 $ ./read.sh - <<< こんにちは
 [input: -, actor: 白狐舞]
