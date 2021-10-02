@@ -108,7 +108,6 @@ main() {
     if [[ $SAVE == "true" ]]; then
       mv "$TMP/$OUT" .
       echo "[created: $OUT]"
-      aplay "$OUT"
     else
       aplay "$TMP/$OUT"
     fi
