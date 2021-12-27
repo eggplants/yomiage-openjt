@@ -1,4 +1,4 @@
-FROM ubuntu:21.04
+FROM ubuntu:impish-20210928
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
