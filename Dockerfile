@@ -1,4 +1,4 @@
-FROM ubuntu:rolling
+FROM ubuntu:21.10
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
